@@ -8,10 +8,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Router>
+        <Switch>
       <Navbar/>
       <Route exact path="/" component={ Landing ***REMOVED***/>
-
-        
+      </Switch>
+      </Router>
       </div>
     );
   ***REMOVED***
