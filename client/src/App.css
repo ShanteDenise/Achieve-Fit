@@ -22,3 +22,15 @@ img{
   width: 100%;
   height: 100%;
 ***REMOVED***
+.card-form {
+  opacity: 0.9;
+***REMOVED***
+
+.latest-profiles-img {
+  width: 40px;
+  height: 40px;
+***REMOVED***
+
+.form-control::placeholder {
+  color: #bbb !important;
+***REMOVED***
