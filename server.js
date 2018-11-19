@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const users = require('./routes/users')
-// const posts = require('./routes/post')
+const posts = require('./routes/post')
 const profile = require('./routes/profile')
 const passport = require('passport')
 
@@ -28,7 +28,7 @@ require('./config/passport')(passport);
 // app.get('/', (req, res) => console.log('Hello'))
 app.use('/users', users);
 app.use('/profile', profile);
-// app.use('/posts', posts);
+app.use('/posts', posts);
 
 const port = process.env.PORT || 4000;
 
