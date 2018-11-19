@@ -10,7 +10,7 @@ class Landing extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-md-12 text-center">
-                    <h1 className="display-3 mb-4">Developer
+                    <h1 className="display-3 mb-4">Achieve-FIT
                     </h1>
                     <p className="lead"> Create a Fitness profile/portfolio, share posts and get help from other Fitness Freaks</p>
                     <hr />
