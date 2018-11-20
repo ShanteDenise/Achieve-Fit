@@ -61,7 +61,7 @@ router.get('/user/:user_id', (req, res) => {
       );
   });
   
-  // route   POST api/profile
+  // route   POST /profile
   // desc    Create or edit user profile
   // access  Private
   router.post(
@@ -86,7 +86,7 @@ router.get('/user/:user_id', (req, res) => {
       if (req.body.status) profileFields.status = req.body.status;
       if (req.body.fitbitusername)
         profileFields.fitbitusername = req.body.fitbitusername;
-        
+
       // Goals - Spilt into array
       if (typeof req.body.goals !== 'undefined') {
         profileFields.goals = req.body.goals.split(',');

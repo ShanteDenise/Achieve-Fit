@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
     );
 });
 
-// route   POST api/posts
+// route   POST /posts
 // desc    Create post
 // access  Private
 router.post(
