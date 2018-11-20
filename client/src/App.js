@@ -1,7 +1,7 @@
 import React, { Component ***REMOVED*** from 'react';
 import { BrowserRouter as Router, Route, Switch ***REMOVED*** from 'react-router-dom';
 import { Provider ***REMOVED*** from 'react-redux'
-import {createStore, applyMiddleware***REMOVED*** from 'redux';
+import store from './store'
 import Navbar from './component/layout/Navbar';
 import Landing from './component/layout/Landing';
 import Register from './component/auth/Register';
@@ -10,7 +10,6 @@ import Login from './component/auth/Login';
 
 import './App.css';
 
-const store = createStore(() => [], {***REMOVED***, applyMiddleware())
 
 class App extends Component {
   render() {
