@@ -9,17 +9,18 @@ class Navbar extends Component {
     e.preventDefault();
     this.props.logoutUser();
   }
+
     render() {
       const  { isAuthenticated, user } = this.props.auth;
 
-      const auth  = (
+      const authen  = (
         <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
                    <a href = "" onClick={this.onLogout.bind(this)} 
                    className="nav-item">
-                   <img src={user.avatar} alt={user.name} style={{width: '25px', marginRight: '5px'}}/>
+                   {/* <img src={user.avatar} alt={user.name} style={{width: '25px', marginRight: '5px'}}/> */}
                    </a>
-                  
+                   Logout
                   </li>
                 </ul>
       )
@@ -75,7 +76,7 @@ class Navbar extends Component {
                     </Link>
                   </li>
                 </ul>
-                {isAuthenticated ? auth : unAuthLinks}
+                {isAuthenticated ? unAuthLinks: authen}
               </div>
             </div>
           </nav>
