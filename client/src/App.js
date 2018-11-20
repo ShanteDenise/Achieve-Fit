@@ -1,7 +1,7 @@
 import React, { Component ***REMOVED*** from 'react';
 import { BrowserRouter as Router, Route, Switch ***REMOVED*** from 'react-router-dom';
 import jwt_decode from './utils/setAuthToken';
-import setAuthToken from 'react-redux';
+import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser ***REMOVED*** from './actions/authActions'
 import { Provider ***REMOVED*** from 'react-redux';
 import store from './store';

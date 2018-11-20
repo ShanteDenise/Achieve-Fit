@@ -2,7 +2,7 @@ import React, { Component ***REMOVED*** from 'react';
 import PropTypes from 'prop-types';
 import { withRouter ***REMOVED*** from 'react-router-dom'
 import classnames from 'classnames';
-import { connect ***REMOVED*** from 'net';
+import { connect ***REMOVED*** from 'react-redux';
 import { registerUser ***REMOVED*** from '../../actions/authActions'
 
 class Register extends Component {
@@ -145,5 +145,6 @@ const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 ***REMOVED***)
+export default connect(mapStateToProps, {registerUser ***REMOVED***)(withRouter(Register));
 
-export default connect(mapStateToProps, {registerUser***REMOVED***)(withRouter(Register));
+// export default connect(mapStateToProps, {registerUser***REMOVED***)(withRouter(Register));

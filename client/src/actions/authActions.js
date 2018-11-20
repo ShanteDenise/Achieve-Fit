@@ -1,59 +1,60 @@
 import axios from 'axios';
-import { GET_ERRORS, SET_CURRENT_USER ***REMOVED*** from './types';
 import setAuthToken from '../utils/setAuthToken';
-import jwt_decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode';
 
-//Register User
-export const registerUser = (userData,history) => dispatch => {
-    axios
-      .post('/users/register', userData)
-      .then(res => history.push('/login'))
-      .catch(err => 
-        dispatch ({
-            type: GET_ERRORS,
-            payload: err.response.data
-        ***REMOVED***)
-      )
-   
-    ***REMOVED***;
+import { GET_ERRORS, SET_CURRENT_USER ***REMOVED*** from './types';
 
-    //Login - Get User Token
-    export const loginUser = (userData) => dispatch => {
-        axios.post('/user/login', userData)
-        .then(res => {
-            //save to local storage
-            const { token ***REMOVED*** = res.data;
-            //Set token to local storage
-            localStorage.setItem('jwtToken', token);
-            //Set token to Auth header
-            setAuthToken(token)
-            //Decode token to get user data
-            const decoded = jwt_decode(token);
-            //Set current user
-            dispatch(setCurrentUser(decoded))
+// Register User
+export const registerUser = (userData, history) => dispatch => {
+  axios
+    .post('/users/register', userData)
+    .then(res => history.push('/login'))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      ***REMOVED***)
+    );
+***REMOVED***;
 
-        ***REMOVED***)
-//Get any errors 
-            .catch(err => 
-                dispatch({
-                    type: GET_ERRORS,
-                    payload: err.response.data
-                ***REMOVED***));
-      
-    ***REMOVED***
-    export const setCurrentUser = (decoded) => {
-        return {
-            type: SET_CURRENT_USER,
-            payload: decoded
-        ***REMOVED***
-    ***REMOVED***
+// Login - Get User Token
+export const loginUser = userData => dispatch => {
+  axios
+    .post('/users/login', userData)
+    .then(res => {
+      // Save to localStorage
+      const { token ***REMOVED*** = res.data;
+      // Set token to ls
+      localStorage.setItem('jwtToken', token);
+      // Set token to Auth header
+      setAuthToken(token);
+      // Decode token to get user data
+      const decoded = jwt_decode(token);
+      // Set current user
+      dispatch(setCurrentUser(decoded));
+    ***REMOVED***)
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      ***REMOVED***)
+    );
+***REMOVED***;
 
-    //Log User out
-    export const logoutUser = () => dispatch => {
-        //Remove token from localStorage
-        localStorage.removeItem('jwtToken');
-        //Remove auth header for future requests
-        setAuthToken(false);
-        //Set current user to an empty object
-        dispatch(setCurrentUser({***REMOVED***));
-    ***REMOVED***
+// Set logged in user
+export const setCurrentUser = decoded => {
+  return {
+    type: SET_CURRENT_USER,
+    payload: decoded
+  ***REMOVED***;
+***REMOVED***;
+
+// Log user out
+export const logoutUser = () => dispatch => {
+  // Remove token from localStorage
+  localStorage.removeItem('jwtToken');
+  // Remove auth header for future requests
+  setAuthToken(false);
+  // Set current user to {***REMOVED*** which will set isAuthenticated to false
+  dispatch(setCurrentUser({***REMOVED***));
+***REMOVED***;
