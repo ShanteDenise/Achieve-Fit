@@ -1,6 +1,9 @@
 import React, { Component ***REMOVED*** from 'react';
-import axios from 'axios';
+import PropTypes from 'prop-types';
+
 import classnames from 'classnames';
+import { connect ***REMOVED*** from 'net';
+import { registerUser ***REMOVED*** from '../../actions/authActions'
 
 class Register extends Component {
   constructor() {
@@ -17,6 +20,11 @@ class Register extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   ***REMOVED***
+  componentWillReceiveProps(nextProps){
+    if(nextProps.errors){
+      this.setState({ errors: nextProps.errors***REMOVED***)
+    ***REMOVED***
+  ***REMOVED***
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value ***REMOVED***);
@@ -31,11 +39,9 @@ class Register extends Component {
       password: this.state.password,
       password2: this.state.password2
     ***REMOVED***;
+    this.props.registerUser(newUser)
 
-    axios
-      .post('/users/register', newUser)
-      .then(res => console.log(res.data))
-      .catch(err => this.setState({ errors: err.response.data ***REMOVED***));
+
   ***REMOVED***
 
   render() {
@@ -127,4 +133,16 @@ class Register extends Component {
   ***REMOVED***
 ***REMOVED***
 
-export default Register;
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isrequired
+ 
+***REMOVED***;
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+***REMOVED***)
+
+export default connect(mapStateToProps, {registerUser***REMOVED***)(Register);
