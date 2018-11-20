@@ -17,10 +17,10 @@ export default function(state = initialState, action){
         case GET_PROFILE:
         return {
             ...state,
-            profilr:action.payload,
+            profile:action.payload,
             loading:false
         }
         default: 
-            return state
+        return state
     }
 }
