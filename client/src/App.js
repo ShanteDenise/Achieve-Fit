@@ -10,7 +10,7 @@ import Landing from './component/layout/Landing';
 import Register from './component/auth/Register';
 import Login from './component/auth/Login';
 import Dashboard from './component/dashboard/Dashboard';
-
+import CreateProfile from './component/createProfile/CreateProfile'
 
 
 import './App.css';
@@ -37,6 +37,7 @@ class App extends Component {
              <Route exact path="/register" component={ Register ***REMOVED*** />
              <Route exact path="/login" component={ Login ***REMOVED*** />
              <Route exact path="/dashboard" component={ Dashboard ***REMOVED*** />
+             <Route exact path="/create-profile" component={ CreateProfile***REMOVED*** />
 
             </div>
       </div>
