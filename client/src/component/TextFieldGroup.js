@@ -7,7 +7,9 @@ const TextFieldGroup =  ({
     name,
     placeholder,
     value,
+    info,
     label,
+    error,
     type,
     onChange,
     disabled
