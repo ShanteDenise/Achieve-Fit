@@ -1,5 +1,7 @@
 import React, { Component ***REMOVED*** from 'react';
 import { Link ***REMOVED*** from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect ***REMOVED*** from 'react-redux'
 
 
 class Navbar extends Component {

@@ -1,8 +1,8 @@
 import React, { Component ***REMOVED*** from 'react';
 import PropTypes from 'prop-types';
 import { connect ***REMOVED*** from 'react-redux';
-import classnames form 'classnames';
-import { LoginUser ***REMOVED*** from '../../actions/authActions';
+import classnames from 'classnames';
+import { loginUser ***REMOVED*** from '../../actions/authActions'
 
 class Login extends Component {
   constructor() {
@@ -17,7 +17,7 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   ***REMOVED***
   //If the user is authenticated redirect to dashboard
-  componentWillReceiveProps(){
+  componentWillReceiveProps(nextProps){
     if(nextProps.auth.isAuthenticated){
       this.props.history.push('/dashboard')
     ***REMOVED***
@@ -30,10 +30,12 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const user = {
+    const userInfo = {
       email: this.state.email,
       password: this.state.password
     ***REMOVED***;
+
+    this.props.loginUser(userInfo);
 
     console.log(user);
   ***REMOVED***
@@ -100,9 +102,9 @@ Login.PropTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 ***REMOVED***
-const mapStateToProps = (state) => {(
-  auth: state.auth;
+const mapStateToProps = state => ({
+  auth: state.auth,
   errors: state.errors
-)***REMOVED***
+***REMOVED***)
 
-export default connect(null, {loginUser***REMOVED***)(Login);
+export default connect(mapStateToProps, {loginUser***REMOVED***)(Login);
