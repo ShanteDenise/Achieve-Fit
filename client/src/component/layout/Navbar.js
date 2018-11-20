@@ -12,15 +12,13 @@ class Navbar extends Component {
 
     render() {
       const  { isAuthenticated, user } = this.props.auth;
+      console.log("User",user)
 
       const authen  = (
         <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                   <a href = "" onClick={this.onLogout.bind(this)} 
-                   className="nav-item">
-                   {/* <img src={user.avatar} alt={user.name} style={{width: '25px', marginRight: '5px'}}/> */}
-                   </a>
-                   Logout
+                   <a href = "" onClick={this.onLogout.bind(this)}>Logout</a>
+                  
                   </li>
                 </ul>
       )
@@ -49,8 +47,7 @@ class Navbar extends Component {
                 className="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
-                data-target="#mobile-nav"
-              >
+                data-target="#mobile-nav">
                 <span className="navbar-toggler-icon" />
               </button>
     
