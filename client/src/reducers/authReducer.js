@@ -1,7 +1,5 @@
 import { SET_CURRENT_USER ***REMOVED*** from '../actions/types'
-import { SERVFAIL ***REMOVED*** from 'dns';
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS ***REMOVED*** from 'constants';
-
+import isEmpty from '../validation/is-empty'
 
 const initialSate = {
     isAuthenticated: false,
