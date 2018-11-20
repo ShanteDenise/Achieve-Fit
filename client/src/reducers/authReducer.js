@@ -1,3 +1,6 @@
+import { SET_CURRENT_USER ***REMOVED*** from '../actions/types'
+
+
 const initialSate = {
     isAuthenticated: false,
     user: {***REMOVED***
