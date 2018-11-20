@@ -1,7 +1,6 @@
-import React, { Component ***REMOVED*** from 'react';
-import classnames from 'classname';
+import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types'
-import { GET_ERRORS ***REMOVED*** from '../actions/types';
 
 const TextFieldGroup =  ({
     name,
@@ -44,7 +43,7 @@ TextFieldGroup.propTypes ={
     info: PropTypes.string,
     error: PropTypes.string,
     type: PropTypes.string.isRequired,
-    onChange: PropTypes.function.isRequired,
+    onChange: PropTypes.func.isRequired,
     disabled: PropTypes.string
 
 ***REMOVED***

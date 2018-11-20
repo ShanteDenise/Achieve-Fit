@@ -1,7 +1,6 @@
 import React, { Component ***REMOVED*** from 'react';
 import PropTypes from 'prop-types';
 import { withRouter ***REMOVED*** from 'react-router-dom'
-import classnames from 'classnames';
 import { connect ***REMOVED*** from 'react-redux';
 import { registerUser ***REMOVED*** from '../../actions/authActions'
 import TextFieldGroup from '../TextFieldGroup'
@@ -75,8 +74,7 @@ class Register extends Component {
                   value={this.state.email***REMOVED***
                   onChange={this.onChange***REMOVED***
                   error={errors.email***REMOVED***
-                  info = "This site uses Gravatar so if you want a profile image, use
-                  create a Gravatar email."
+                  info = "Create a Gravator email for a profile picture"
                   />
 
                   <TextFieldGroup
@@ -90,7 +88,7 @@ class Register extends Component {
 
                   <TextFieldGroup
                   placeholder="Confirm Password"
-                  name="password 2"
+                  name="password2"
                   type="password"
                   value={this.state.password2***REMOVED***
                   onChange={this.onChange***REMOVED***
@@ -120,4 +118,3 @@ const mapStateToProps = state => ({
 ***REMOVED***)
 export default connect(mapStateToProps, {registerUser ***REMOVED***)(withRouter(Register));
 
-// export default connect(mapStateToProps, {registerUser***REMOVED***)(withRouter(Register));
