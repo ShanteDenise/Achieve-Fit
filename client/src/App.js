@@ -1,5 +1,6 @@
 import React, { Component ***REMOVED*** from 'react';
-import { BrowserRouter as Router, Route, Switch ***REMOVED*** from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch ***REMOVED*** from 'react-router-dom';
+import { Provider ***REMOVED*** from 'react-redux'
 import Navbar from './component/layout/Navbar';
 import Landing from './component/layout/Landing';
 import Register from './component/auth/Register';
@@ -11,6 +12,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      <Provider store ={ store ***REMOVED*** >
       <Router>
       <Switch>
       <div className="App">
@@ -25,6 +27,7 @@ class App extends Component {
     
       </Switch>
       </Router>
+      </Provider>
      
     );
   ***REMOVED***
