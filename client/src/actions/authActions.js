@@ -1,17 +1,16 @@
 import axios from 'axios';
-import { GET_ERRORS ***REMOVED*** from '.types';
+import { GET_ERRORS ***REMOVED*** from './types';
 
 //Register User
-export const registerUser = userData => dispatch => {
+export const registerUser = (userData,history) => dispatch => {
     axios
       .post('/users/register', userData)
-      .then(res => console.log(res.data))
+      .then(res => history.push('/login'))
       .catch(err => 
         dispatch ({
             type: GET_ERRORS,
             payload: err.response.data
-        
-        ***REMOVED***);
+        ***REMOVED***)
       )
    
     ***REMOVED***;

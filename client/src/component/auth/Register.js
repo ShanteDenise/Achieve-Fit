@@ -1,6 +1,6 @@
 import React, { Component ***REMOVED*** from 'react';
 import PropTypes from 'prop-types';
-
+import { withRouter ***REMOVED*** from 'react-router-dom'
 import classnames from 'classnames';
 import { connect ***REMOVED*** from 'net';
 import { registerUser ***REMOVED*** from '../../actions/authActions'
@@ -39,7 +39,8 @@ class Register extends Component {
       password: this.state.password,
       password2: this.state.password2
     ***REMOVED***;
-    this.props.registerUser(newUser)
+    //redirect to login page
+    this.props.registerUser(newUser, this.props.history)
 
 
   ***REMOVED***
@@ -145,4 +146,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 ***REMOVED***)
 
-export default connect(mapStateToProps, {registerUser***REMOVED***)(Register);
+export default connect(mapStateToProps, {registerUser***REMOVED***)(withRouter(Register));
