@@ -6,7 +6,7 @@ import FormListGroup from '../FormListGroup';
 import InputFieldGroup from '../InputFields';
 import TextFieldGroup from '../TextFieldGroup';
 import {createProfile, getCurrentProfile } from '../../actions/profileActions'
-
+import isEmpty from '../../validation/is-empty'
 
 class CreateProfile extends Component {
     constructor(props){
@@ -35,10 +35,29 @@ class CreateProfile extends Component {
         if (nextProps.profile.profile) {
             const profile = nextProps.profile.profile;
 
+            //Skills array will change back to comma separated values
+            const goalsArray = profile.goals.join(',')
+
+
+            // If profile field does not exist make an empty string
+            profile.handle = !isEmpty(profile.handle) ? profile.handle : ' ';
+            profile.location = !isEmpty(profile.location) ? profile.location : ' ';
+            profile.status = !isEmpty(profile.status) ? profile.status : ' ';
+            profile.bio = !isEmpty(profile.bio) ? profile.bio : ' ';
+
+
+
            
         
         this.setState({
             handle: profile.handle,
+            location: profile.location,
+            location: profile.location,
+            status: profile.status,
+            goals: goalsArray,
+            bio: profile.bio
+
+
         
         })
        
@@ -135,9 +154,6 @@ class CreateProfile extends Component {
 
                     </form>
                    
-                     
-                  
-                  
                   
                   </div>    
                  </div>
