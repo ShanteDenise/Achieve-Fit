@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import FormListGroup from '../FormListGroup';
 import InputFieldGroup from '../InputFields';
 import TextFieldGroup from '../TextFieldGroup';
-import {createProfile} from '../../actions/profileActions';
+import {createProfile, getCurrentProfile } from '../../actions/profileActions'
 
 
 class CreateProfile extends Component {
@@ -25,13 +25,26 @@ class CreateProfile extends Component {
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
-    
-
+    componentDidMount(){
+        this.props.getCurrentProfile();
+    }
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
           this.setState({ errors: nextProps.errors });
         }
+        if (nextProps.profile.profile) {
+            const profile = nextProps.profile.profile;
+
+           
+        
+        this.setState({
+            handle: profile.handle,
+        
+        })
+       
     }
+}
+  
 
     onSubmit(e) {
         e.preventDefault();
@@ -45,8 +58,8 @@ class CreateProfile extends Component {
         }
         this.props.createProfile(profileData, this.props.history)
 
-
     }
+    
    
     onChange(e){
         this.setState({ [e.target.name]: e.target.value});
@@ -73,9 +86,7 @@ class CreateProfile extends Component {
                 <div className="container">
                  <div className="row">
                   <div className="col-md-7 m-auto">
-                  <h1 className="display-4 text-center">Create Your Profile</h1>
-                    <p className="lead text-center">
-                    Input your information!</p>
+                  <h1 className="display-4 text-center">Edit Your Profile</h1>
                     <small className="d-block pb-3">* = required Field</small>
                     <form onSubmit={this.onSubmit}>
                     <TextFieldGroup
@@ -124,6 +135,10 @@ class CreateProfile extends Component {
 
                     </form>
                    
+                     
+                  
+                  
+                  
                   </div>    
                  </div>
                 </div>
@@ -132,6 +147,8 @@ class CreateProfile extends Component {
     }
 }
 CreateProfile.propTypes = {
+    createProfile: PropTypes.func.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 }
@@ -143,5 +160,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-export default connect(mapStateToProps, { createProfile })(withRouter(CreateProfile));
-
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(CreateProfile));

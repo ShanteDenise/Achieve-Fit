@@ -74,6 +74,7 @@ router.get('/user/:user_id', (req, res) => {
       if (!isValid) {
         // Return any errors with 400 status
         return res.status(400).json(errors);
+       
       }
   
       // Get fields
