@@ -36,6 +36,8 @@ CSS3 - Styling.
 
 React.js
 
+Postman-tool for prototyping APIs
+
 Redux - State Manager
 
 Wireframes:
