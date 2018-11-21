@@ -42,31 +42,24 @@ Wireframes:
 
 Home Page
 ----
-![screen shot 2018-11-21 at 3 00 47 am](https://user-images.githubusercontent.com/33140493/48826914-b6c3bc80-ed39-11e8-863c-c609e3bbc32a.png)
-
-![screen shot 2018-11-21 at 2 57 44 am](https://user-images.githubusercontent.com/33140493/48826918-b9261680-ed39-11e8-8f55-80390c3d7307.png)
 
 ![screen shot 2018-11-21 at 2 56 00 am](https://user-images.githubusercontent.com/33140493/48826922-baefda00-ed39-11e8-8c7a-582102c889a7.png)
 
 
 
 
-Profile Setup
+Login/Register Page
 ----
-![screen shot 2018-10-31 at 12 55 53 pm](https://user-images.githubusercontent.com/33140493/47804924-6e057e80-dd0c-11e8-9a63-9054f8829ce1.png)
+![screen shot 2018-11-21 at 3 00 47 am](https://user-images.githubusercontent.com/33140493/48826914-b6c3bc80-ed39-11e8-863c-c609e3bbc32a.png)
 
 
-Index Page
+
+
+
+
+Profile Page
 ---
-![screen shot 2018-10-31 at 1 01 35 pm](https://user-images.githubusercontent.com/33140493/47805226-2fbc8f00-dd0d-11e8-96cc-90656f21176c.png)
-
-
-
-
-Show Page for Individual Clothing Items
----
-![screen shot 2018-10-31 at 1 00 16 pm](https://user-images.githubusercontent.com/33140493/47805141-f421c500-dd0c-11e8-92da-7eb5ed54be89.png)
-
+![screen shot 2018-11-21 at 2 57 44 am](https://user-images.githubusercontent.com/33140493/48826918-b9261680-ed39-11e8-8f55-80390c3d7307.png)
 
 
 
