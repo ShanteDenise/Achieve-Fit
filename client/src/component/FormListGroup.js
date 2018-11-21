@@ -37,9 +37,8 @@ const FormListGroup =  ({
         );
     ***REMOVED***
 
-FormListGroup.propTypes ={
+FormListGroup.propTypes = {
     name: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
     value: PropTypes.string.isRequired,
     info: PropTypes.string,
     error: PropTypes.string,
@@ -47,8 +46,6 @@ FormListGroup.propTypes ={
     options: PropTypes.array.isRequired
 
 ***REMOVED***
-FormListGroup.defaultProps = {
-    type: 'text'
-***REMOVED***
+
 
 export default FormListGroup;

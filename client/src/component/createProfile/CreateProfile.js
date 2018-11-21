@@ -3,8 +3,10 @@ import { connect ***REMOVED*** from 'react-redux';
 import { withRouter ***REMOVED*** from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FormListGroup from '../FormListGroup';
-// import InputFieldGroup from '../InputFieldGroup';
+import InputFieldGroup from '../InputFields';
 import TextFieldGroup from '../TextFieldGroup';
+
+
 
 class CreateProfile extends Component {
     constructor(props){
@@ -17,7 +19,7 @@ class CreateProfile extends Component {
             goals: '',
             fitbitusername: '',
             instagram: '',
-            errors: {***REMOVED***
+            errors: {***REMOVED***,
         ***REMOVED***
         this.onChange = this.onChange.bind(this);
         this.onChange = this.onSubmit.bind(this);
@@ -46,6 +48,7 @@ class CreateProfile extends Component {
             {label: "Other", value:"Other"***REMOVED***
 
         ]
+      
 
         return (
             <div className="create-profile">
@@ -62,16 +65,41 @@ class CreateProfile extends Component {
                     name="handle"
                     value={this.state.handle***REMOVED***
                     onChange={this.onChange***REMOVED***
+                    options={options***REMOVED***
                     errors={errors.handle***REMOVED***
                     info="A unique handle for your profile. This can be a full name, nickname, or etc"
                     />
-                    <FormListGroup
-                    placeholder="* Profile Handle"
-                    name="handle"
-                    value={this.state.handle***REMOVED***
+                       <TextFieldGroup
+                    placeholder="Location"
+                    name="location"
+                    value={this.state.location***REMOVED***
                     onChange={this.onChange***REMOVED***
                     errors={errors.handle***REMOVED***
-                    info="A unique handle for your profile. This can be a full name, nickname, or etc"
+                    />
+                    <FormListGroup
+                    placeholder="* Status"
+                    name="status"
+                    value={this.state.status***REMOVED***
+                    onChange={this.onChange***REMOVED***
+                    errors={errors.status***REMOVED***
+                    options={options***REMOVED***
+                    />
+                       <InputFieldGroup
+                    placeholder="Bio"
+                    name="Bio"
+                    value={this.state.bio***REMOVED***
+                    onChange={this.onChange***REMOVED***
+                    errors={errors.bio***REMOVED***
+                    info="Tell Us About You and Your Fitness Goals!"
+                    />
+                    
+                       <TextFieldGroup
+                    placeholder="* Goals"
+                    name="Goals"
+                    value={this.state.goals***REMOVED***
+                    onChange={this.onChange***REMOVED***
+                    errors={errors.goals***REMOVED***
+                    info="Use comma separated values (ex: Be Leaner, Walk-up at 5am, Gym 5x A Week)"
                     />
                     </form>
                    
