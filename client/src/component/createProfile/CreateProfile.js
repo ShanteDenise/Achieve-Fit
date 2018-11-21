@@ -22,12 +22,15 @@ class CreateProfile extends Component {
             errors: {***REMOVED***,
         ***REMOVED***
         this.onChange = this.onChange.bind(this);
-        this.onChange = this.onSubmit.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     ***REMOVED***
 
     onSubmit(e) {
         e.preventDefault();
+
     ***REMOVED***
+   
+    
 
 
     onChange(e){
@@ -101,6 +104,7 @@ class CreateProfile extends Component {
                     errors={errors.goals***REMOVED***
                     info="Use comma separated values (ex: Be Leaner, Walk-up at 5am, Gym 5x A Week)"
                     />
+                    
                     <input type="submit" className="btn btn-info btn-block mt-4" />
 
                     </form>
