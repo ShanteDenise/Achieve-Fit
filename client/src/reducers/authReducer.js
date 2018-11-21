@@ -15,6 +15,6 @@ export default function(state = initialSate, action){
             user: action.payload
         ***REMOVED***
         default:
-        return state;
+            return state;
     ***REMOVED***
 ***REMOVED***

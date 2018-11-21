@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import FormListGroup from '../FormListGroup';
 import InputFieldGroup from '../InputFields';
 import TextFieldGroup from '../TextFieldGroup';
-import {createProfile***REMOVED*** from '../../actions/profileActions';
+import {createProfile, getCurrentProfile ***REMOVED*** from '../../actions/profileActions'
 
 
 class CreateProfile extends Component {
@@ -25,13 +25,26 @@ class CreateProfile extends Component {
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     ***REMOVED***
-    
-
+    componentDidMount(){
+        this.props.getCurrentProfile();
+    ***REMOVED***
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
           this.setState({ errors: nextProps.errors ***REMOVED***);
         ***REMOVED***
+        if (nextProps.profile.profile) {
+            const profile = nextProps.profile.profile;
+
+           
+        
+        this.setState({
+            handle: profile.handle,
+        
+        ***REMOVED***)
+       
     ***REMOVED***
+***REMOVED***
+  
 
     onSubmit(e) {
         e.preventDefault();
@@ -45,8 +58,8 @@ class CreateProfile extends Component {
         ***REMOVED***
         this.props.createProfile(profileData, this.props.history)
 
-
     ***REMOVED***
+    
    
     onChange(e){
         this.setState({ [e.target.name]: e.target.value***REMOVED***);
@@ -73,9 +86,7 @@ class CreateProfile extends Component {
                 <div className="container">
                  <div className="row">
                   <div className="col-md-7 m-auto">
-                  <h1 className="display-4 text-center">Create Your Profile</h1>
-                    <p className="lead text-center">
-                    Input your information!</p>
+                  <h1 className="display-4 text-center">Edit Your Profile</h1>
                     <small className="d-block pb-3">* = required Field</small>
                     <form onSubmit={this.onSubmit***REMOVED***>
                     <TextFieldGroup
@@ -124,6 +135,10 @@ class CreateProfile extends Component {
 
                     </form>
                    
+                     
+                  
+                  
+                  
                   </div>    
                  </div>
                 </div>
@@ -132,6 +147,8 @@ class CreateProfile extends Component {
     ***REMOVED***
 ***REMOVED***
 CreateProfile.propTypes = {
+    createProfile: PropTypes.func.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 ***REMOVED***
@@ -143,5 +160,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 ***REMOVED***)
 
-export default connect(mapStateToProps, { createProfile ***REMOVED***)(withRouter(CreateProfile));
-
+export default connect(mapStateToProps, { createProfile, getCurrentProfile ***REMOVED***)(withRouter(CreateProfile));

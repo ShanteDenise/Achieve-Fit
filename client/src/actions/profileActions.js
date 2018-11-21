@@ -6,7 +6,6 @@ import { GET_PROFILE, PROFILE_LOADING, GET_ERRORS, SET_CURRENT_USER***REMOVED***
 //Get current profile
 
 export const getCurrentProfile = () => dispatch => {
-    dispatch(setProfileLoading());
     axios.get('/profile')
     .then(res =>
         dispatch ({
@@ -24,7 +23,7 @@ export const getCurrentProfile = () => dispatch => {
 ***REMOVED***
 
 //Create Profile
-export const createProfile= (profileData, history) => dispatch => {
+export const createProfile = (profileData, history) => dispatch => {
     axios
         .post('/profile', profileData)
         .then(res => history.push('/dashboard'))
@@ -37,7 +36,7 @@ export const createProfile= (profileData, history) => dispatch => {
 ***REMOVED***
 
 //Delete account & profile
-export const deleteAccount = () => dispatch => {
+export const deleteAccount = () => dispatch => {   
     axios
     .delete('/profile')
     .then(res =>
