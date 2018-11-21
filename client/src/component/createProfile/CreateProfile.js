@@ -21,12 +21,23 @@ class CreateProfile extends Component {
             instagram: '',
             errors: {***REMOVED***,
         ***REMOVED***
+
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     ***REMOVED***
 
     onSubmit(e) {
         e.preventDefault();
+
+        const profileData = {
+            handle: this.state.handle,
+            location: this.state.location,
+            status: this.state.status,
+            goals: this.state.goals,
+            bio: this.state.bio
+        ***REMOVED***
+        this.props.CreateProfile(profileData, this.props.history)
+
 
     ***REMOVED***
    
