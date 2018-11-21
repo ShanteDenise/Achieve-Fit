@@ -8,7 +8,6 @@ import TextFieldGroup from '../TextFieldGroup';
 
 
 
-
 class CreateProfile extends Component {
     constructor(props){
         super(props);
@@ -24,11 +23,6 @@ class CreateProfile extends Component {
         }
         this.onChange = this.onChange.bind(this);
         this.onChange = this.onSubmit.bind(this);
-    }
-    componentWillRecieveProps(nextProps){
-        if(nextProps.errors) {
-            this.setState({errors: nextProps.errors})
-        }
     }
 
     onSubmit(e) {
