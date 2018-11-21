@@ -3,16 +3,26 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server.js ./bin/www",
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm install && npm run build"
   ***REMOVED***,
+  "author": "Shante Austin",
+  "license": "MIT",
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "dotenv": "^6.1.0",
-    "express": "~4.16.0",
-    "hbs": "~4.0.1",
-    "http-errors": "~1.6.2",
-    "mongoose": "^5.3.13",
-    "morgan": "~1.9.0"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "gravatar": "^1.6.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.11",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.9.0"
+  ***REMOVED***,
+  "devDependencies": {
+    "nodemon": "^1.18.6"
   ***REMOVED***
 ***REMOVED***

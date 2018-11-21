@@ -27,6 +27,8 @@ class Dashboard extends Component {
       if (Object.keys(profile).length > 0) {
         dashboardContent = (<div>
           <p className="lead text-muted">Welcome <Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{user.name***REMOVED***</Link></p>
+          <p className="lead text-muted">Welcome <Link to={`/profile/${profile.bio***REMOVED***`***REMOVED***>{user.bio***REMOVED***</Link></p>
+
           <ProfileEdit/>
           <div style={{ marginBottom: '50px'***REMOVED******REMOVED***/>
           <button onClick={this.onDeleteClick.bind(this)***REMOVED*** className="btn btn-danger">Delete My Profile</button>
