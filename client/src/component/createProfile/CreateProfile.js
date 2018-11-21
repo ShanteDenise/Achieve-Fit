@@ -101,6 +101,8 @@ class CreateProfile extends Component {
                     errors={errors.goals***REMOVED***
                     info="Use comma separated values (ex: Be Leaner, Walk-up at 5am, Gym 5x A Week)"
                     />
+                    <input type="submit" className="btn btn-info btn-block mt-4" />
+
                     </form>
                    
                      
