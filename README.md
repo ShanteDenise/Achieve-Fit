@@ -67,9 +67,10 @@ Show Page for Individual Clothing Items
 
 ERD Diagram / Model Associations
 ---
-In this project I had six models with a one-to-many relationship. 
+In this project I had three models with one-to-one and one-to-many relationships . 
 
-![screen shot 2018-10-31 at 1 03 43 pm](https://user-images.githubusercontent.com/33140493/47805333-790cde80-dd0d-11e8-9659-297797c8f11c.png)
+![screen shot 2018-11-21 at 2 52 25 am](https://user-images.githubusercontent.com/33140493/48826535-91827e80-ed38-11e8-995f-11ca09655397.png)
+
 
 
 
