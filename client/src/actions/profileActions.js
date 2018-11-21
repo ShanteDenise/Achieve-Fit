@@ -1,10 +1,12 @@
 import axios from 'axios'
-import { GET_PROFILE, GET_ERRORS***REMOVED*** from './types';
+
+import { GET_PROFILE, PROFILE_LOADING, GET_ERRORS***REMOVED*** from './types';
 
 
 //Get current profile
 
 export const getCurrentProfile = () => dispatch => {
+    dispatch(setProfileLoading());
     axios.get('/profile')
     .then(res =>
         dispatch ({
@@ -21,17 +23,8 @@ export const getCurrentProfile = () => dispatch => {
 
 ***REMOVED***
 
-//Create profile
-export const createProfile= (profileData, history)  => dispatch => {
-    axios
-        .post('/profile', profileData)
-        .then(res => history.push('/dashboard'))
-        .catch(err => 
-            dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data
-
-            ***REMOVED***))
+export const setProfileLoading = () => {
+    return {
+        type: PROFILE_LOADING
+    ***REMOVED***
 ***REMOVED***
-
-
