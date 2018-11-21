@@ -30,9 +30,6 @@ class CreateProfile extends Component {
 
     }
    
-    
-
-
     onChange(e){
         this.setState({ [e.target.name]: e.target.value});
     }
@@ -89,7 +86,7 @@ class CreateProfile extends Component {
                     />
                        <InputFieldGroup
                     placeholder="Bio"
-                    name="Bio"
+                    name="bio"
                     value={this.state.bio}
                     onChange={this.onChange}
                     errors={errors.bio}
@@ -98,13 +95,13 @@ class CreateProfile extends Component {
                     
                        <TextFieldGroup
                     placeholder="* Goals"
-                    name="Goals"
+                    name="goals"
                     value={this.state.goals}
                     onChange={this.onChange}
                     errors={errors.goals}
                     info="Use comma separated values (ex: Be Leaner, Walk-up at 5am, Gym 5x A Week)"
                     />
-                    
+
                     <input type="submit" className="btn btn-info btn-block mt-4" />
 
                     </form>
@@ -128,6 +125,7 @@ CreateProfile.propTypes = {
 
 const mapStateToProps = state => ({
     profile: state.profile,
+    //Listen for error state that was brought in from reducer
     errors: state.errors
 })
 
