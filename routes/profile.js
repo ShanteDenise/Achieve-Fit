@@ -74,7 +74,6 @@ router.get('/user/:user_id', (req, res) => {
       if (!isValid) {
         // Return any errors with 400 status
         return res.status(400).json(errors);
-       
       ***REMOVED***
   
       // Get fields
@@ -85,20 +84,12 @@ router.get('/user/:user_id', (req, res) => {
       if (req.body.bio) profileFields.bio = req.body.bio;
       if (req.body.status) profileFields.status = req.body.status;
       if (req.body.fitbitusername)
-        profileFields.fitbitusername = req.body.fitbitusername;
-
-      // Goals - Spilt into array
+        profileFields.githubusername = req.body.githubusername;
+      // Skills - Spilt into array
       if (typeof req.body.goals !== 'undefined') {
         profileFields.goals = req.body.goals.split(',');
       ***REMOVED***
   
-      // Social
-      profileFields.social = {***REMOVED***;
-      if (req.body.youtube) profileFields.social.youtube = req.body.youtube;
-      if (req.body.twitter) profileFields.social.twitter = req.body.twitter;
-      if (req.body.facebook) profileFields.social.facebook = req.body.facebook;
-      if (req.body.linkedin) profileFields.social.linkedin = req.body.linkedin;
-      if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
   
       Profile.findOne({ user: req.user.id ***REMOVED***).then(profile => {
         if (profile) {
@@ -119,12 +110,14 @@ router.get('/user/:user_id', (req, res) => {
             ***REMOVED***
   
             // Save Profile
-            new Profile(profileFields).save().then(profile => res.json(profile));
+            new Profile(profileFields).save()
+            .then(profile => res.json(profile));
           ***REMOVED***);
         ***REMOVED***
       ***REMOVED***);
     ***REMOVED***
   );
+  
   
   
   // route   POST profile/education

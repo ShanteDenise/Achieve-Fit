@@ -21,7 +21,7 @@ module.exports = function validateProfileInput(data) {
   ***REMOVED***
 
   if (Validator.isEmpty(data.goals)) {
-    errors.skills = 'Skills field is required';
+    errors.skills = 'Goals field is required';
   ***REMOVED***
 
   if (!isEmpty(data.youtube)) {

@@ -120,7 +120,7 @@ class CreateProfile extends Component {
                     info="Use comma separated values (ex: Be Leaner, Walk-up at 5am, Gym 5x A Week)"
                     />
 
-                    <input type="submit" className="btn btn-info btn-block mt-4" />
+                    <input type="submit" value="submit" className="btn btn-info btn-block mt-4" />
 
                     </form>
                    
