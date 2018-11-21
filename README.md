@@ -46,20 +46,17 @@ Home Page
 ![screen shot 2018-11-21 at 2 56 00 am](https://user-images.githubusercontent.com/33140493/48826922-baefda00-ed39-11e8-8c7a-582102c889a7.png)
 
 
+Profile Page
+---
+![screen shot 2018-11-21 at 2 57 44 am](https://user-images.githubusercontent.com/33140493/48826918-b9261680-ed39-11e8-8f55-80390c3d7307.png)
+
+
 
 
 Login/Register Page
 ----
 ![screen shot 2018-11-21 at 3 00 47 am](https://user-images.githubusercontent.com/33140493/48826914-b6c3bc80-ed39-11e8-863c-c609e3bbc32a.png)
 
-
-
-
-
-
-Profile Page
----
-![screen shot 2018-11-21 at 2 57 44 am](https://user-images.githubusercontent.com/33140493/48826918-b9261680-ed39-11e8-8f55-80390c3d7307.png)
 
 
 
