@@ -52,7 +52,6 @@ class CreateProfile extends Component {
         this.setState({
             handle: profile.handle,
             location: profile.location,
-            location: profile.location,
             status: profile.status,
             goals: goalsArray,
             bio: profile.bio

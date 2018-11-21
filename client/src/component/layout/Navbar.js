@@ -16,10 +16,13 @@ class Navbar extends Component {
 
       const authen  = (
         <ul className="navbar-nav ml-auto">
+        <li> 
+                <Link className="nav-item mr-4" to="/dashboard">Dashboard</Link></li>
                 <li className="nav-item">
                  <a href = "" onClick={this.onLogout.bind(this)***REMOVED***>Logout</a>
-                
+                                 
                 </li>
+                
               </ul>
        
         
