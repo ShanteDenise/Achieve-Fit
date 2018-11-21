@@ -39,7 +39,7 @@ class App extends Component {
              <Route exact path="/login" component={ Login ***REMOVED*** />
              <Route exact path="/dashboard" component={ Dashboard ***REMOVED*** />
              <Route exact path="/create-profile" component={ CreateProfile***REMOVED*** />
-              <Route exact path="/edit-profile" component={ EditProfile***REMOVED*** />
+             <Route exact path="/edit-profile" component={ EditProfile***REMOVED*** />
 
 
             </div>
