@@ -12,7 +12,7 @@ import Login from './component/auth/Login';
 import Dashboard from './component/dashboard/Dashboard';
 import CreateProfile from './component/createProfile/CreateProfile';
 import EditProfile from './component/edit-profile/EditProfile'
-
+import Profile from './component/profile/Profile'
 
 import './App.css';
 
@@ -40,6 +40,7 @@ class App extends Component {
              <Route exact path="/dashboard" component={ Dashboard } />
              <Route exact path="/create-profile" component={ CreateProfile} />
              <Route exact path="/edit-profile" component={ EditProfile} />
+             <Route exact path="profiles/:id" component={ Profile}/>
 
 
             </div>
