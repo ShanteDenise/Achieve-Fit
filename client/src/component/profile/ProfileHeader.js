@@ -1,6 +1,6 @@
-import React, { Component ***REMOVED*** from 'react';
+import React from 'react';
 
-class ProfileHeader extends Component {
+class ProfileHeader  {
     render() {
         return (
             <div>

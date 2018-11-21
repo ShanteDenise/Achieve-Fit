@@ -21,6 +21,24 @@ export const getCurrentProfile = () => dispatch => {
             ***REMOVED***))
 
 ***REMOVED***
+//Get profile by handle
+
+export const getProfileByHandle = (user_id) => dispatch => {
+    axios.get(`/profile/${user_id***REMOVED***`)
+    .then(res =>
+        dispatch ({
+            type: GET_PROFILE,
+            payload: res.data
+        ***REMOVED***)
+        )
+        //return an empty object
+        .catch(err =>
+            dispatch({
+                type: GET_PROFILE,
+                payload:null
+            ***REMOVED***))
+
+***REMOVED***
 
 //Create Profile
 export const createProfile = (profileData, history) => dispatch => {
@@ -52,8 +70,3 @@ export const deleteAccount = () => dispatch => {
             ***REMOVED***))
 ***REMOVED***
 
-export const setProfileLoading = () => {
-    return {
-        type: PROFILE_LOADING
-    ***REMOVED***
-***REMOVED***
