@@ -84,7 +84,7 @@ router.get('/user/:user_id', (req, res) => {
       if (req.body.bio) profileFields.bio = req.body.bio;
       if (req.body.status) profileFields.status = req.body.status;
       if (req.body.fitbitusername)
-        profileFields.githubusername = req.body.githubusername;
+        profileFields.fitbitusername = req.body.fitbitusername;
       // Skills - Spilt into array
       if (typeof req.body.goals !== 'undefined') {
         profileFields.goals = req.body.goals.split(',');

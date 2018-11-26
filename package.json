@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js ./bin/www",
+    "start": "node server.js",
     "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "cd client && npm install && npm run build"

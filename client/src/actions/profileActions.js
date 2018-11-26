@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { GET_PROFILE, PROFILE_LOADING, GET_ERRORS, SET_CURRENT_USER***REMOVED*** from './types';
+import { GET_PROFILE, GET_ERRORS, SET_CURRENT_USER***REMOVED*** from './types';
 
 
 //Get current profile
