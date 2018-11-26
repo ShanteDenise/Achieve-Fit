@@ -55,9 +55,8 @@ class CreateProfile extends Component {
             status: profile.status,
             goals: goalsArray,
             bio: profile.bio
-
-
         
+            
         })
        
     }
