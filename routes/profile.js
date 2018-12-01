@@ -186,7 +186,8 @@ router.get('/user/:user_id', (req, res) => {
     passport.authenticate('jwt', { session: false ***REMOVED***),
     (req, res) => {
       Profile.findOneAndRemove({ user: req.user.id ***REMOVED***).then(() => {
-        User.findOneAndRemove({ _id: req.user.id ***REMOVED***).then(() =>
+        User.findOneAndRemove({ _id: req.user.id ***REMOVED***).then(() => 
+        
           res.json({ success: true ***REMOVED***)
         );
       ***REMOVED***);

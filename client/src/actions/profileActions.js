@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { GET_PROFILE, GET_ERRORS, SET_CURRENT_USER***REMOVED*** from './types';
+import { GET_PROFILE, GET_ERRORS, SET_CURRENT_USER, CLEAR_CURRENT_PROFILE ***REMOVED*** from './types';
 
 
 //Get current profile
@@ -55,18 +55,26 @@ export const createProfile = (profileData, history) => dispatch => {
 
 //Delete account & profile
 export const deleteAccount = () => dispatch => {   
+    if(window.confirm('Are you sure you want to Delete? This can not be changed.')){
     axios
     .delete('/profile')
-    .then(res =>
-        dispatch({
+    .then(res =>  dispatch({
             //set current user to an empty object when this delete function is called
             type: SET_CURRENT_USER,
             payload:{***REMOVED***
+            
         ***REMOVED***)
-        ).catch(err =>
-            dispatch({
+    ).catch(err =>
+        dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
-            ***REMOVED***))
+            ***REMOVED***)
+        )
+    ***REMOVED***
 ***REMOVED***
 
+export const clearProfile = () => {
+    return {
+        type: CLEAR_CURRENT_PROFILE
+    ***REMOVED***
+***REMOVED***
