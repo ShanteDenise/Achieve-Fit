@@ -1,4 +1,4 @@
-import { GET_PROFILE, PROFILE_LOADING***REMOVED*** from '../actions/types'
+import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE***REMOVED*** from '../actions/types'
 
 
 const initialState = {
@@ -21,7 +21,12 @@ export default function(state = initialState, action){
             ...state,
             profile:action.payload,
             loading:false
-        ***REMOVED***
+        ***REMOVED***;
+        case CLEAR_CURRENT_PROFILE:
+            return {
+                ...state,
+                profile: null
+            ***REMOVED***
         default: 
         return state
     ***REMOVED***

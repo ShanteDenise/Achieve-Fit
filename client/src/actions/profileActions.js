@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { GET_PROFILE, GET_ERRORS, PROFILE_LOADING, SET_CURRENT_USER, CLEAR_CURRENT_PROFILE, PROFILE_LOADING ***REMOVED*** from './types';
+import { GET_PROFILE, GET_ERRORS, PROFILE_LOADING, SET_CURRENT_USER, CLEAR_CURRENT_PROFILE ***REMOVED*** from './types';
 
 
 //Get current profile
@@ -29,6 +29,14 @@ export const setProfileLoading = () => {
         type: PROFILE_LOADING
     ***REMOVED***
 ***REMOVED***
+//Clear Profile
+export const clearCurrentProfile = () => {
+    return {
+        type: CLEAR_CURRENT_PROFILE
+    ***REMOVED***
+***REMOVED***
+
+
 
 //Get profile by handle
 
@@ -61,6 +69,8 @@ export const createProfile = (profileData, history) => dispatch => {
             ***REMOVED***))
 
 ***REMOVED***
+
+
 
 //Delete account & profile
 export const deleteAccount = () => dispatch => {   
