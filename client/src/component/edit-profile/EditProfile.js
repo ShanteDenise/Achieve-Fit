@@ -43,11 +43,7 @@ class CreateProfile extends Component {
             profile.handle = !isEmpty(profile.handle) ? profile.handle : ' ';
             profile.location = !isEmpty(profile.location) ? profile.location : ' ';
             profile.status = !isEmpty(profile.status) ? profile.status : ' ';
-            profile.bio = !isEmpty(profile.bio) ? profile.bio : ' ';
-
-
-
-           
+            profile.bio = !isEmpty(profile.bio) ? profile.bio : ' ';   
         
         this.setState({
             handle: profile.handle,

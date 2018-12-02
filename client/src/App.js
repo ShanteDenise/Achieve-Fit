@@ -13,27 +13,24 @@ import Dashboard from './component/dashboard/Dashboard';
 import CreateProfile from './component/createProfile/CreateProfile';
 import EditProfile from './component/edit-profile/EditProfile'
 import Profile from './component/profile/Profile'
-import { logoutUser } from '../../actions/authActions'
+import { logoutUser } from './actions/authActions'
 import './App.css';
 
 //Check for token
 if(localStorage.jwtToken){
-  setAuthToken(localStorage.jetToken);
+  setAuthToken(localStorage.jwtToken);
   //Decode token get user info and exp
-  const decoded = jwt_decode(localStorage.jetToken)
+  const decoded = jwt_decode(localStorage.jwtToken)
   //Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded))
 
-  //Check for expired token
-  const currentTime = Date.now() / 1000;
-  if(decoded.exp < currentTime) {
     //logout the current user
     store.dispatch(logoutUser());
     //Redirect to login
-    window.location.href = './login';
+    window.location.href = '/login';
 
   }
-}
+
 
 class App extends Component {
   render() {

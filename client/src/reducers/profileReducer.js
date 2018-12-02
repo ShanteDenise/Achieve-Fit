@@ -9,11 +9,13 @@ const initialState = {
 
 export default function(state = initialState, action){
     switch(action.type){
+        //If the profile is loading set state to loading true
         case PROFILE_LOADING:
         return {
             ...state,
             loading: true
         }
+        //If you get the profile loading is set to false and profile will show payload(data)
         case GET_PROFILE:
         return {
             ...state,
