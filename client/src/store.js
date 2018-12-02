@@ -13,6 +13,7 @@ const store = createStore(
   initialState,
   compose(
     applyMiddleware(...middleware),
+    //Add redux devtools extention
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
