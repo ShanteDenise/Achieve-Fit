@@ -18,7 +18,6 @@ class CreateProfile extends Component {
             status: '',
             goals: '',
             fitbitusername: '',
-            instagram: '',
             errors: {***REMOVED***,
         ***REMOVED***
 

@@ -18,7 +18,6 @@ class CreateProfile extends Component {
             status: '',
             goals: '',
             fitbitusername: '',
-            instagram: '',
             errors: {***REMOVED***,
         ***REMOVED***
 
@@ -43,6 +42,7 @@ class CreateProfile extends Component {
             goals: this.state.goals,
             bio: this.state.bio
         ***REMOVED***
+        //call history to redirect
         this.props.createProfile(profileData, this.props.history)
 
 

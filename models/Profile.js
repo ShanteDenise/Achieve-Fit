@@ -53,24 +53,8 @@ const ProfileSchema = new Schema({
             type:String
         ***REMOVED***  
     ***REMOVED***
-],
-    social: {
-        youtube:{
-            type: String
-        ***REMOVED***,
-        twitter:{
-            type: String
-        ***REMOVED***,
-        facebook:{
-            type: String
-        ***REMOVED***,
-        linkedin:{
-            type: String
-        ***REMOVED***,
-        Instagram:{
-            type: String
-        ***REMOVED***
-    ***REMOVED***,
+    ],
+     
     date:{
         type: Date,
         default: Date.now
