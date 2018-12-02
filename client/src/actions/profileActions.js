@@ -32,7 +32,7 @@ export const getProfileByHandle = (user_id) => dispatch => {
         })
         )
         //return an empty object
-        .catch(err =>
+         .catch(err =>
             dispatch({
                 type: GET_PROFILE,
                 payload:null

@@ -6,7 +6,10 @@ import { logoutUser } from '../../actions/authActions'
 
 class Navbar extends Component {
   onLogout(e) {
+    //prevent page from reloading
     e.preventDefault();
+    //call logoutUser created from authActions to handle 
+    //when Logout button is selected 
     this.props.logoutUser();
   }
 
@@ -14,7 +17,7 @@ class Navbar extends Component {
       const  { isAuthenticated, user } = this.props.auth;
       console.log("User",user)
 
-      const authen  = (
+      const auth  = (
         <ul className="navbar-nav ml-auto">
         <li> 
                 <Link className="nav-item mr-4" to="/dashboard">Dashboard</Link></li>
@@ -68,7 +71,8 @@ class Navbar extends Component {
                   </li>
                 </ul>
     
-                {isAuthenticated ? authen: unAuthLinks}
+                {isAuthenticated ? auth: unAuthLinks}
+                {/* isAuthenticated is coming from auth Property which comes from state in redux */}
 
               </div>
             </div>
@@ -81,7 +85,7 @@ class Navbar extends Component {
       logoutUser: PropTypes.func.isRequired,
       auth: PropTypes.object.isRequired
     }
-    const mapStateToProps = state => ({
+    const mapStateToProps = (state) => ({
       auth: state.auth,
     })
     
