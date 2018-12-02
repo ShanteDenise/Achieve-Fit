@@ -22,14 +22,14 @@ class Navbar extends Component {
         <li> 
                 <Link className="nav-item mr-4" to="/dashboard">Dashboard</Link></li>
                 <li className="nav-item">
-                 <a href = "" onClick={this.onLogout.bind(this)***REMOVED***>Logout</a>
-                                 
-                </li>
-                
-              </ul>
-       
-        
-      )
+                 <a href = "" 
+                 onClick={this.onLogout.bind(this)***REMOVED***className="nav-link">
+                 <img src={user.avatar***REMOVED*** alt={user.name***REMOVED*** style={{ width: '25px', marginRight:'5px'***REMOVED******REMOVED***/>
+                 {' '***REMOVED***Logout
+                 </a>                  
+              </li>          
+          </ul>
+      );
       const unAuthLinks  = (
         <ul className="navbar-nav ml-auto">
         <li className="nav-item">

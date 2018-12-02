@@ -18,6 +18,7 @@ class Login extends Component {
   ***REMOVED***
 
   componentDidMount() {
+    //check to see if the user is logged in. Push to dashboard
     if (this.props.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
     ***REMOVED***
