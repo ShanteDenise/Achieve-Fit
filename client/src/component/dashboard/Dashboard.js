@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect ***REMOVED*** from 'react-redux';
 import { getCurrentProfile, deleteAccount ***REMOVED*** from '../../actions/profileActions';
 import ProfileEdit from './ProfileEdit';
+import loader from '../../run_loader.gif';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -19,9 +20,9 @@ class Dashboard extends Component {
     const { profile, loading ***REMOVED*** = this.props.profile;
 
     let dashboardContent;
-
+   //When the dashboard is loading the dashboard content will be set to loading gif
     if (profile === null || loading) {
-      dashboardContent = <h4>Loading</h4>;
+      dashboardContent = <img src={loader***REMOVED*** style={{width: '50px'***REMOVED******REMOVED*** alt="loading"/>;
     ***REMOVED***
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
@@ -33,6 +34,7 @@ class Dashboard extends Component {
           <button onClick={this.onDeleteClick.bind(this)***REMOVED*** className="btn btn-danger">Delete My Profile</button>
         </div>
         )
+
       ***REMOVED***
         // User is logged in but has no profile
         dashboardContent = (
@@ -47,6 +49,7 @@ class Dashboard extends Component {
       ***REMOVED***
     ***REMOVED***
 
+    //render the dashboard content below
     return (
       <div className="dashboard">
         <div className="container">
@@ -62,6 +65,7 @@ class Dashboard extends Component {
   ***REMOVED***
 ***REMOVED***
 
+//Bring in proptypes
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   deleteAccount: PropTypes.func.isRequired,
@@ -69,6 +73,7 @@ Dashboard.propTypes = {
   profile: PropTypes.object.isRequired
 ***REMOVED***;
 
+//bring in profile and authentication
 const mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth

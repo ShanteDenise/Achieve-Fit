@@ -92,8 +92,3 @@ export const deleteAccount = () => dispatch => {
     ***REMOVED***
 ***REMOVED***
 
-export const clearProfile = () => {
-    return {
-        type: CLEAR_CURRENT_PROFILE
-    ***REMOVED***
-***REMOVED***
