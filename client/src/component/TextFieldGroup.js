@@ -28,6 +28,7 @@ const TextFieldGroup =  ({
                     />
                      {info && <small className="form-text text-muted"> {info***REMOVED***</small>***REMOVED***
                      {error && <div className="form-text text-muted"> {error***REMOVED***</div>***REMOVED***
+                     {/* input error if there is an error under the form */***REMOVED***
 
             </div>
                 
