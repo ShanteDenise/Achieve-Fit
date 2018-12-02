@@ -22,7 +22,7 @@ class Dashboard extends Component {
     let dashboardContent;
    //When the dashboard is loading the dashboard content will be set to loading gif
     if (profile === null || loading) {
-      dashboardContent = <img src={loader***REMOVED*** style={{width: '50px'***REMOVED******REMOVED*** alt="loading"/>;
+      dashboardContent = <img src={loader***REMOVED*** style={{width: '200px', margin:'auto', display: 'block'***REMOVED******REMOVED*** alt="loading"/>
     ***REMOVED***
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
