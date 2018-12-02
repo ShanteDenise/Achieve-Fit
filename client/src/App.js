@@ -6,6 +6,7 @@ import { setCurrentUser } from './actions/authActions'
 import { clearCurrentProfile } from './actions/profileActions'
 import { Provider } from 'react-redux';
 import store from './store';
+import PrivateRoute from './component/PrivateRoute';
 import Navbar from './component/layout/Navbar';
 import Landing from './component/layout/Landing';
 import Register from './component/auth/Register';
@@ -46,12 +47,16 @@ class App extends Component {
          <Navbar />
             <Route exact path="/" component={ Landing }/>
              <div className="container">
-             <Route exact path="/register" component={ Register } />
-             <Route exact path="/login" component={ Login } />
-             <Route exact path="/dashboard" component={ Dashboard } />
-             <Route exact path="/create-profile" component={ CreateProfile} />
-             <Route exact path="/edit-profile" component={ EditProfile} />
-             <Route exact path="profiles/:id" component={ Profile}/>
+              <Route exact path="/register" component={ Register } />
+              <Route exact path="/login" component={ Login } />
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={ Dashboard } />
+             </Switch>
+            <Switch>
+              <PrivateRoute exact path="/create-profile" component={ CreateProfile} />
+            </Switch>
+              <Route exact path="/edit-profile" component={ EditProfile} />
+              <Route exact path="profiles/:id" component={ Profile}/>
 
 
             </div>
