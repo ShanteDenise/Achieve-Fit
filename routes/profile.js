@@ -59,8 +59,8 @@ router.get(
       })
       .catch(err => res.status(404).json({ profile: 'There are no profiles' }));
   });
-  
-  // route   GET profile/user/:user_id
+
+// route   GET profile/user/:user_id
 // desc    Get profile by user ID
 // access  Public
 
