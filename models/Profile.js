@@ -53,24 +53,8 @@ const ProfileSchema = new Schema({
             type:String
         }  
     }
-],
-    social: {
-        youtube:{
-            type: String
-        },
-        twitter:{
-            type: String
-        },
-        facebook:{
-            type: String
-        },
-        linkedin:{
-            type: String
-        },
-        Instagram:{
-            type: String
-        }
-    },
+    ],
+     
     date:{
         type: Date,
         default: Date.now

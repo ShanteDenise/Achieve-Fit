@@ -23,6 +23,25 @@ export const getCurrentProfile = () => dispatch => {
 
 }
 
+//Get current profile
+
+export const getProfiles = () => dispatch => {
+    dispatch(setProfileLoading());
+    axios.get('/profile/all')
+    .then(res =>
+        dispatch ({
+            type: GET_PROFILE,
+            payload: res.data
+        })
+        )
+        //return an empty object
+        .catch(err =>
+            dispatch({
+                type: GET_PROFILE,
+                payload:err.response.data
+            }))
+
+}
 //Profile Loading
 export const setProfileLoading = () => {
     return {
