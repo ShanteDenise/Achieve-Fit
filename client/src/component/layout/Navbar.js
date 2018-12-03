@@ -83,7 +83,7 @@ class Navbar extends Component {
       ***REMOVED***   
     
     ***REMOVED***
-    Navbar.PropTypes = {
+    Navbar.propTypes = {
       logoutUser: PropTypes.func.isRequired,
       auth: PropTypes.object.isRequired
     ***REMOVED***

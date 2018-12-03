@@ -27,8 +27,18 @@ class Dashboard extends Component {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (<div>
-          <p className="lead text-muted">Welcome <Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{user.handle***REMOVED***</Link></p>
+          <p className="lead text-muted">Welcome <Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{user.name***REMOVED***</Link></p>
+
+          <div className="card car-body bg-light  mb-6">
+          <div className="row">
+          <img src={user.avatar***REMOVED*** style={{width: '200px', display: 'block'***REMOVED******REMOVED*** alt="loading" className="rounded-circle"/>
           <p className="lead text-muted">{profile.bio***REMOVED*** <Link to={`/profile/${profile.bio***REMOVED***`***REMOVED***></Link></p>
+          <p>Location:{profile.location***REMOVED***</p>
+          </div>
+          </div>
+
+          
+   
           <ProfileEdit/>
           <div style={{ marginBottom: '50px'***REMOVED******REMOVED***/>
           <button onClick={this.onDeleteClick.bind(this)***REMOVED*** className="btn btn-danger">Delete My Profile</button>

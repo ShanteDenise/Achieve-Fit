@@ -22,6 +22,7 @@ class Profiles extends Component {
                     <ProfileItems key={profile._id***REMOVED*** profile={profile***REMOVED***/>
                 ))
             ***REMOVED***
+                console.log(profileItem)
                 profileItem = <h4> No profiles found</h4>
             ***REMOVED***
         ***REMOVED***
