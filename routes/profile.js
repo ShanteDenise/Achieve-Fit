@@ -40,7 +40,7 @@ router.get(
     }
   );
 
-  //route profile/all
+  //route profiles/all
   //get all users profiles
   //access public
 

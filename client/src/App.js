@@ -63,7 +63,7 @@ class App extends Component {
               <PrivateRoute exact path="/edit-profile" component={ EditProfile} />
             </Switch>
               <Route exact path="profiles/:id" component={ Profile}/>
-              <Route exact path="profiles" component={ Profiles}/>
+              <Route exact path="/profiles" component={Profiles} />
 
 
 

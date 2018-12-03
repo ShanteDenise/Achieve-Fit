@@ -3,19 +3,24 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles } from '../../actions/profileActions'
 import loader from '../../run_loader.gif';
-
-
+import ProfileItems from './ProfileItems';
 
 class Profiles extends Component {
-    render() {
-        const {profiles, loading } = this.props.profile;
-        let profileItems;
+    componentDidMount(){
+        this.props.getProfiles();
+    }
 
+    render() {
+        const { profiles, loading } = this.props.profile;
+        let profileItems;
+      //If there are no profiles display loading
         if(profiles === null || loading) {
             profileItems = <img src={loader} style={{width: '200px', margin:'auto', display: 'block'}} alt="loading"/>
         } else {
             if(profiles.length > 0) {
-              
+                profileItems = profiles.map(profile => (
+                    <ProfileItems key={profile._id} profile={profile}/>
+                ))
             } else {
                 profileItems = <h4> No profiles found</h4>
             }
