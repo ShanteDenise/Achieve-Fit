@@ -3,26 +3,26 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles } from '../../actions/profileActions'
 import loader from '../../run_loader.gif';
-import ProfileItems from './ProfileItems';
+import ProfileItems from './ProfileItems'
 
 class Profiles extends Component {
     componentDidMount(){
         this.props.getProfiles();
     }
-
+  
     render() {
         const { profiles, loading } = this.props.profile;
-        let profileItems;
+        let profileItem;
       //If there are no profiles display loading
         if(profiles === null || loading) {
-            profileItems = <img src={loader} style={{width: '200px', margin:'auto', display: 'block'}} alt="loading"/>
+            profileItem = <img src={loader} style={{width: '150px', margin:'auto', display: 'block'}} alt="loading"/>
         } else {
             if(profiles.length > 0) {
-                profileItems = profiles.map(profile => (
+                profileItem = profiles.map(profile => (
                     <ProfileItems key={profile._id} profile={profile}/>
                 ))
             } else {
-                profileItems = <h4> No profiles found</h4>
+                profileItem = <h4> No profiles found</h4>
             }
         }
 
@@ -35,7 +35,7 @@ class Profiles extends Component {
                                 <p className="lead text-center">
                                     Connect with Fitness Fanatics and Create Your Own Goals For A Healthier Lifestyle.  
                                 </p>
-                                {profileItems}
+                                {profileItem}
                         </div>
                     </div>
                 </div>
