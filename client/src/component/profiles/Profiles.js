@@ -3,19 +3,24 @@ import { connect ***REMOVED*** from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles ***REMOVED*** from '../../actions/profileActions'
 import loader from '../../run_loader.gif';
-
-
+import ProfileItems from './ProfileItems';
 
 class Profiles extends Component {
-    render() {
-        const {profiles, loading ***REMOVED*** = this.props.profile;
-        let profileItems;
+    componentDidMount(){
+        this.props.getProfiles();
+    ***REMOVED***
 
+    render() {
+        const { profiles, loading ***REMOVED*** = this.props.profile;
+        let profileItems;
+      //If there are no profiles display loading
         if(profiles === null || loading) {
             profileItems = <img src={loader***REMOVED*** style={{width: '200px', margin:'auto', display: 'block'***REMOVED******REMOVED*** alt="loading"/>
         ***REMOVED***
             if(profiles.length > 0) {
-              
+                profileItems = profiles.map(profile => (
+                    <ProfileItems key={profile._id***REMOVED*** profile={profile***REMOVED***/>
+                ))
             ***REMOVED***
                 profileItems = <h4> No profiles found</h4>
             ***REMOVED***

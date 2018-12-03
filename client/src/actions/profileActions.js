@@ -23,14 +23,14 @@ export const getCurrentProfile = () => dispatch => {
 
 ***REMOVED***
 
-//Get current profile
+//Get All profiles
 
 export const getProfiles = () => dispatch => {
     dispatch(setProfileLoading());
-    axios.get('/profile/all')
+    axios.get('profile/all')
     .then(res =>
         dispatch ({
-            type: GET_PROFILE,
+            type: GET_PROFILES,
             payload: res.data
         ***REMOVED***)
         )

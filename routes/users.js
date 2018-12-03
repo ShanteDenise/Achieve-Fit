@@ -58,11 +58,15 @@ router.post('/register', (req, res) => {
   ***REMOVED***);
 ***REMOVED***);
 
-// @route   GET api/users/login
+// @route   GET users/login
 // @desc    Login User / Returning JWT Token
 // @access  Public
 router.post('/login', (req, res) => {
   const { errors, isValid ***REMOVED*** = validateLoginInput(req.body);
+
+
+
+
 
   // Check Validation
   if (!isValid) {
@@ -105,9 +109,9 @@ router.post('/login', (req, res) => {
   ***REMOVED***);
 ***REMOVED***);
 
-// @route   GET api/users/current
-// @desc    Return current user
-// @access  Private
+// route   GET users/current
+// desc    Return current user
+// access  Private
 router.get(
   '/current',
   passport.authenticate('jwt', { session: false ***REMOVED***),

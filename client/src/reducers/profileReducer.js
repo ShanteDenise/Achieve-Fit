@@ -22,17 +22,18 @@ export default function(state = initialState, action){
             profile:action.payload,
             loading:false
         ***REMOVED***;
+        case GET_PROFILES:
+        return {
+            ...state,
+            profiles: action.payload,
+            loading: false
+        ***REMOVED***
         case CLEAR_CURRENT_PROFILE:
             return {
                 ...state,
                 profile: null
             ***REMOVED***
-        case GET_PROFILES:
-            return {
-                ...state,
-                profile: action.payload,
-                loading: false
-            ***REMOVED***
+
         default: 
         return state
     ***REMOVED***
