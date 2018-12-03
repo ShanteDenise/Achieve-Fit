@@ -30,6 +30,15 @@ app.use('/users', users);
 app.use('/profile', profile);
 app.use('/posts', posts);
 
+
+app.get('/', (req, res) => {
+ res.sendFile(__dirname + '/client/build/index.html')
+})
+
+app.get('/*', (req, res) => {
+ res.sendFile(__dirname + '/client/build/index.html')
+})
+
 const port = process.env.PORT ||3001;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
