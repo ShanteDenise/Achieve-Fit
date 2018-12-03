@@ -139,66 +139,7 @@ router.get('/user/:user_id', (req, res) => {
     ***REMOVED***
   );
   
-  
-  
-  // route   POST profile/education
-  // desc    Add education to profile
-  // access  Private
-  router.post(
-    '/education',
-    passport.authenticate('jwt', { session: false ***REMOVED***),
-    (req, res) => {
-      const { errors, isValid ***REMOVED*** = validateEducationInput(req.body);
-  
-      // Check Validation
-      if (!isValid) {
-        // Return any errors with 400 status
-        return res.status(400).json(errors);
-      ***REMOVED***
-  
-      Profile.findOne({ user: req.user.id ***REMOVED***).then(profile => {
-        const newEdu = {
-          school: req.body.school,
-          degree: req.body.degree,
-          fieldofstudy: req.body.fieldofstudy,
-          from: req.body.from,
-          to: req.body.to,
-          current: req.body.current,
-          description: req.body.description
-        ***REMOVED***;
-  
-        // Add to exp array
-        profile.education.unshift(newEdu);
-  
-        profile.save().then(profile => res.json(profile));
-      ***REMOVED***);
-    ***REMOVED***
-  );
-   
-  // route   DELETE profile/education/:edu_id
-  // desc    Delete education from profile
-  // access  Private
-  router.delete(
-    '/education/:edu_id',
-    passport.authenticate('jwt', { session: false ***REMOVED***),
-    (req, res) => {
-      Profile.findOne({ user: req.user.id ***REMOVED***)
-        .then(profile => {
-          // Get remove index
-          const removeIndex = profile.education
-            .map(item => item.id)
-            .indexOf(req.params.edu_id);
-  
-          // Splice out of array
-          profile.education.splice(removeIndex, 1);
-  
-          // Save
-          profile.save().then(profile => res.json(profile));
-        ***REMOVED***)
-        .catch(err => res.status(404).json(err));
-    ***REMOVED***
-  );
-  
+
   // route   DELETE /profile
   // desc    Delete user and profile
   // access  Private
