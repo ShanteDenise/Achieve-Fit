@@ -22,6 +22,7 @@ class Profiles extends Component {
                     <ProfileItems key={profile._id} profile={profile}/>
                 ))
             } else {
+                console.log(profileItem)
                 profileItem = <h4> No profiles found</h4>
             }
         }

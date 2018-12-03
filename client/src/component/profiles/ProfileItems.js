@@ -10,10 +10,10 @@ class ProfileItems extends Component {
       <div className="card car-body bg-light mb-4">
         <div className="row">
           <div className="col-2" />
-          <img src={profile.users.avatar} alt="User Profile Picture" className="rounded-circle"/>
+          <img src={profile.user.avatar} alt="" className="rounded-circle" />
         </div>
         <div className="col-lg-6 col-md-4 col-8">
-          <h3>{profile.users.name}</h3>
+          <h3>{profile.user.name}</h3>
           <p>{profile.status}</p>
           <p>
             <span>{profile.location}</span>
@@ -22,8 +22,8 @@ class ProfileItems extends Component {
             View Profile
           </Link>
           <div>
-            <div className="col-md-4 d-none d-md-block">
-              <h4>Goals</h4>
+              <div className="col-md-4 d-none d-md-block">
+             <h4>Goals</h4>
               <ul className="list-group">
                 {profile.goals.slice(0, 6).map((goals, index) => (
                   <li key={index} className="list-group-item">
@@ -39,6 +39,7 @@ class ProfileItems extends Component {
     );
   }
 }
+
 ProfileItems.propTypes = {
   profile: PropTypes.object.isRequired
 };
