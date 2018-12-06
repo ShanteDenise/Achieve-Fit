@@ -54,11 +54,11 @@ router.get(
           errors.noprofile = 'There are no profiles';
           return res.status(404).json(errors);
         ***REMOVED***
-  
         res.json(profiles);
       ***REMOVED***)
       .catch(err => res.status(404).json({ profile: 'There are no profiles' ***REMOVED***));
   ***REMOVED***);
+  
 
 // route   GET profile/user/:user_id
 // desc    Get profile by user ID

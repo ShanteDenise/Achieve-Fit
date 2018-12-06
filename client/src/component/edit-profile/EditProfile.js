@@ -99,7 +99,7 @@ class CreateProfile extends Component {
                  <div className="row">
                   <div className="col-md-7 m-auto">
                   <h1 className="display-4 text-center">Edit Your Profile</h1>
-                    <small className="d-block pb-3">* = required Field</small>
+                    <small className="d-block pb-3">All Fields required</small>
                     <form onSubmit={this.onSubmit***REMOVED***>
                     <TextFieldGroup
                     placeholder="* Profile Handle"

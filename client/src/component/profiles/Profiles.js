@@ -52,7 +52,7 @@ Profiles.propTypes = {
 ***REMOVED***
 
 const mapStateToProps = state => ({
-    profile: state.profile
+    profile: state.profile,
 ***REMOVED***)
 
 

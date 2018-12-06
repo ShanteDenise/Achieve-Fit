@@ -26,19 +26,18 @@ class Dashboard extends Component {
     ***REMOVED***
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
-        dashboardContent = (<div>
-          <p className="lead text-muted">Welcome <Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{user.name***REMOVED***</Link></p>
-
-          <div className="card car-body bg-light  mb-6">
-          <div className="row">
-          <img src={user.avatar***REMOVED*** style={{width: '200px', display: 'block'***REMOVED******REMOVED*** alt="loading" className="rounded-circle"/>
-          <p className="lead text-muted">{profile.bio***REMOVED*** <Link to={`/profile/${profile.bio***REMOVED***`***REMOVED***></Link></p>
-          <p>Location:{profile.location***REMOVED***</p>
+        dashboardContent = ( <div>
+                    
+          <div className="media">
+          <img className="align-self-center mr-3" src={user.avatar***REMOVED*** style={{width: '200px', display: 'block'***REMOVED******REMOVED***></img>
+          <div className="media-body">
+          <h5 className="mt-0">Welcome <Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{user.name***REMOVED***</Link></h5>
+          <p className="lead text-muted bio-text">{profile.bio***REMOVED*** <Link to={`/profile/${profile.bio***REMOVED***`***REMOVED***></Link></p>
+          <p className="mb-0">Location:{profile.location***REMOVED***</p>
+       
           </div>
           </div>
-
           
-   
           <ProfileEdit/>
           <div style={{ marginBottom: '50px'***REMOVED******REMOVED***/>
           <button onClick={this.onDeleteClick.bind(this)***REMOVED*** className="btn btn-danger">Delete My Profile</button>
