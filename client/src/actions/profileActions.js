@@ -27,7 +27,7 @@ export const getCurrentProfile = () => dispatch => {
 
 export const getProfiles = () => dispatch => {
     dispatch(setProfileLoading());
-    axios.get('profile/all')
+    axios.get('/profile/all')
     .then(res =>
         dispatch ({
             type: GET_PROFILES,
