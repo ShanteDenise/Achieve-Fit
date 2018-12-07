@@ -59,8 +59,8 @@ export const clearCurrentProfile = () => {
 
 //Get profile by handle
 
-export const getProfileByHandle = (user_id) => dispatch => {
-    axios.get(`/profile/${user_id}`)
+export const getProfileByHandle = (handle) => dispatch => {
+    axios.get(`/profile/${handle}`)
     .then(res =>
         dispatch ({
             type: GET_PROFILE,

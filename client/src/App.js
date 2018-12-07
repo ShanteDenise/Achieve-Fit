@@ -15,11 +15,11 @@ import Login from './component/auth/Login';
 
 import Dashboard from './component/dashboard/Dashboard';
 import CreateProfile from './component/createProfile/CreateProfile';
-import EditProfile from './component/edit-profile/EditProfile'
-import Profile from './component/profile/Profile'
-import Profiles from './component/profiles/Profiles'
+import EditProfile from './component/edit-profile/EditProfile';
+import Profile from './component/profile/Profile';
+import Profiles from './component/profiles/Profiles';
 
-import { logoutUser } from './actions/authActions'
+import { logoutUser } from './actions/authActions';
 import './App.css';
 
 //Check for token
@@ -62,7 +62,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/edit-profile" component={ EditProfile} />
             </Switch>
-              <Route exact path="profiles/:id" component={ Profile}/>
+              <Route exact path="profile/:id" component={ Profile}/>
               <Route exact path="/profiles" component={Profiles} />
 
 

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ProfileHeader from './ProfileHeader';
-import ProfileFitBit from './/ProfileFitBit'
-import ProfileBio from './ProfileBio'
-import ProfileGoals from './ProfileGoals'
-import { getProfileByHandle } from '../../actions/profileActions'
+import ProfileFitBit from './ProfileFitBit';
+import ProfileBio from './ProfileBio';
+import ProfileGoals from './ProfileGoals';
+import { getProfileByHandle } from '../../actions/profileActions';
 
 class Profile extends Component {
     componentDidMount(){
