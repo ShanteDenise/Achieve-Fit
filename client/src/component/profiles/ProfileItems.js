@@ -13,7 +13,7 @@ class ProfileItems extends Component {
           <div className="media">
           <img className="align-self-center mr-3 rounded-circle" src={profile.user.avatar} style={{width: '200px', display: 'block'}}></img>
           <div className="media-body">
-          <h5 className="mb-3"><Link to={`/profile/${profile.handle}`}>{profile.user.name}</Link></h5>
+          <h5 className="mb-3"><Link to={`/profile/${profile.handle}`}>{profile.user.handle}</Link></h5>
           {' '}
           <p className="mb-0">Location: {profile.location}</p>
           <ul className="list-group">
