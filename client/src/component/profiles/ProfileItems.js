@@ -10,7 +10,7 @@ class ProfileItems extends Component {
       <div className="card car-body bg-light mb-4">
         <div className="row">
           <div className="col-2" />
-          <img src={profile.user.avatar} alt="user pic" className="rounded-circle" />
+          <img src={profile.user.avatar} style={{width: '200px', display: 'block'}} alt="user pic" className="rounded-circle" />
         </div>
         <div className="col-lg-6 col-md-4 col-8">
           <h3>{profile.user.name}</h3>
