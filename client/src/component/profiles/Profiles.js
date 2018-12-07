@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles } from '../../actions/profileActions'
 import loader from '../../run_loader.gif';
-import ProfileItems from './ProfileItems'
+import ProfileItems from './ProfileItems';
+
 
 class Profiles extends Component {
     componentDidMount(){

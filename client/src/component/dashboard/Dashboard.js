@@ -33,8 +33,17 @@ class Dashboard extends Component {
           <div className="media-body">
           <h5 className="mt-0">Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link></h5>
           <p className="lead text-muted bio-text">{profile.bio} <Link to={`/profile/${profile.bio}`}></Link></p>
+          {' '}
           <p className="mb-0">Location:{profile.location}</p>
-       
+          <div className="mb=10"></div>
+          <ul className="list-group">
+                {profile.goals.slice(0, 6).map((goals, index) => (
+                  <li key={index} className="list-group-item">
+                    <i className="fa fa-check pr-1" />
+                    {goals}
+                  </li>
+                ))}
+              </ul>
           </div>
           </div>
           

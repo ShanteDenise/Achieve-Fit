@@ -7,35 +7,36 @@ class ProfileItems extends Component {
     const { profile } = this.props;
 
     return (
-      <div className="card car-body bg-light mb-4">
-        <div className="row">
-          <div className="col-2" />
-          <img src={profile.user.avatar} style={{width: '200px', display: 'block'}} alt="user pic" className="rounded-circle" />
-        </div>
-        <div className="col-lg-6 col-md-4 col-8">
-          <h3>{profile.user.name}</h3>
-          <p>{profile.status}</p>
-          <p>
-            <span>{profile.location}</span>
-          </p>
+
+      <div className="container">
+                    
+          <div className="media">
+          <img className="align-self-center mr-3" src={profile.user.avatar} style={{width: '200px', display: 'block'}}></img>
+          <div className="media-body">
+          <h5 className="mt-0"><Link to={`/profile/${profile.handle}`}>{profile.user.name}</Link></h5>
+          {' '}
+          <p className="mb-0">Location: {profile.location}</p>
           <Link to={`/profile/${profile.handle}`} className="btn btn-info">
             View Profile
           </Link>
-          <div>
-              <div className="col-md-4 d-none d-md-block">
-             <h4>Goals</h4>
-              <ul className="list-group">
-                {profile.goals.slice(0, 6).map((goals, index) => (
+          <ul className="list-group">
+                {profile.goals.slice(0, 3).map((goals, index) => (
                   <li key={index} className="list-group-item">
                     <i className="fa fa-check pr-1" />
                     {goals}
                   </li>
                 ))}
               </ul>
-            </div>
           </div>
+          </div>
+          
+         
+         
+      
+         
+          
         </div>
-      </div>
+    
     );
   }
 }
