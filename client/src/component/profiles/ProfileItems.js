@@ -8,16 +8,16 @@ class ProfileItems extends Component {
 
     return (
 
-      <div className="container mb-2" style={{height: '40%'***REMOVED******REMOVED***>
+      <div className="container mb-4" style={{'display': 'block'***REMOVED******REMOVED***>
                     
-          <div className="media">
-          <img className="align-self-center mr-3 rounded-circle" src={profile.user.avatar***REMOVED*** style={{width: '200px', display: 'block'***REMOVED******REMOVED***></img>
+          <div className="media mb-1">
+          <img className="align-self-center mr-3" src={profile.user.avatar***REMOVED*** style={{width: '200px', display: 'block'***REMOVED******REMOVED***></img>
           <div className="media-body">
-          <h5 className="mb-3"><Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{profile.user.handle***REMOVED***</Link></h5>
+          <h5 className="mb-2"><Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{profile.user.name***REMOVED***</Link></h5>
           {' '***REMOVED***
-          <p className="mb-0">Location: {profile.location***REMOVED***</p>
+          <p className="mb-2">Location: {profile.location***REMOVED***</p>
           <ul className="list-group">
-                {profile.goals.slice(0, 3).map((goals, index) => (
+                {profile.goals.slice(0, 2).map((goals, index) => (
                   <li key={index***REMOVED*** className="list-group-item">
                     <i className="fa fa-check pr-1" />
                     {goals***REMOVED***

@@ -60,19 +60,21 @@ export const clearCurrentProfile = () => {
 //Get profile by handle
 
 export const getProfileByHandle = (handle) => dispatch => {
-    axios.get(`/profile/${handle***REMOVED***`)
+    dispatch(setProfileLoading());
+    axios.get(`/profile/handle/${handle***REMOVED***`)
+    console.log(handle)
     .then(res =>
         dispatch ({
             type: GET_PROFILE,
             payload: res.data
-        ***REMOVED***)
+    ***REMOVED***)
         )
         //return an empty object
-         .catch(err =>
-            dispatch({
-                type: GET_PROFILE,
-                payload:null
-            ***REMOVED***))
+     .catch(err =>
+        dispatch({
+            type: GET_PROFILE,
+            payload:null
+    ***REMOVED***))
 
 ***REMOVED***
 

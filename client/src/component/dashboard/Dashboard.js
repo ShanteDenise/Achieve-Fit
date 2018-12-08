@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect ***REMOVED*** from 'react-redux';
 import { getCurrentProfile, deleteAccount ***REMOVED*** from '../../actions/profileActions';
 import ProfileEdit from './ProfileEdit';
-import loader from '../../run_loader.gif';
+import loader from '../../blue_loader.jpg';
 
 class Dashboard extends Component {
   componentDidMount() {

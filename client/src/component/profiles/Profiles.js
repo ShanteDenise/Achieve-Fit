@@ -2,7 +2,7 @@ import React, { Component ***REMOVED*** from 'react';
 import { connect ***REMOVED*** from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles ***REMOVED*** from '../../actions/profileActions'
-import loader from '../../run_loader.gif';
+import loader from '../../blue_loader.jpg';
 import ProfileItems from './ProfileItems';
 
 

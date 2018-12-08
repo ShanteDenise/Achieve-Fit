@@ -26,7 +26,7 @@ class Navbar extends Component {
                 <li className="nav-item">
                  <a href = "" 
                  onClick={this.onLogout.bind(this)***REMOVED***className="nav-link">
-                 <img src={user.avatar***REMOVED*** alt={user.name***REMOVED*** style={{ width: '25px', marginRight:'5px'***REMOVED******REMOVED***/>
+                 <img className="rounded-circle" src={user.avatar***REMOVED*** alt={user.name***REMOVED*** style={{ width: '25px', marginRight:'5px'***REMOVED******REMOVED***/>
                  {' '***REMOVED***Logout
                  </a>                  
               </li>          
