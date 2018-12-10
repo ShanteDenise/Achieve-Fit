@@ -4,7 +4,6 @@ import { GET_PROFILE, GET_ERRORS, PROFILE_LOADING, SET_CURRENT_USER, CLEAR_CURRE
 
 
 //Get current profile
-
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading());
     axios.get('/profile')
@@ -14,11 +13,10 @@ export const getCurrentProfile = () => dispatch => {
             payload: res.data
         })
         )
-        //return an empty object
         .catch(err =>
             dispatch({
                 type: GET_PROFILE,
-                payload:{}
+                payload:null
             }))
 
 }
@@ -42,41 +40,25 @@ export const getProfiles = () => dispatch => {
             }))
 
 }
-//Profile Loading
-export const setProfileLoading = () => {
-    return {
-        type: PROFILE_LOADING
-    }
-}
-//Clear Profile
-export const clearCurrentProfile = () => {
-    return {
-        type: CLEAR_CURRENT_PROFILE
-    }
-}
 
-
-
-//Get profile by handle
-
+// Get profile by handle
 export const getProfileByHandle = (handle) => dispatch => {
     dispatch(setProfileLoading());
-    axios.get(`/profile/handle/${handle}`)
-    console.log(handle)
-    .then(res =>
-        dispatch ({
-            type: GET_PROFILE,
-            payload: res.data
-    })
-        )
-        //return an empty object
-     .catch(err =>
+    axios
+      .get(`/profile/handle/${handle}`)
+      .then(res =>
         dispatch({
-            type: GET_PROFILE,
-            payload:null
-    }))
-
-}
+          type: GET_PROFILE,
+          payload: res.data
+        })
+      )
+      .catch(err =>
+        dispatch({
+          type: GET_PROFILE,
+          payload: {}
+        })
+      )
+  }
 
 //Create Profile
 export const createProfile = (profileData, history) => dispatch => {
@@ -90,7 +72,6 @@ export const createProfile = (profileData, history) => dispatch => {
             }))
 
 }
-
 
 
 //Delete account & profile
@@ -112,4 +93,18 @@ export const deleteAccount = () => dispatch => {
         )
     }
 }
+
+//Profile Loading
+export const setProfileLoading = () => {
+    return {
+        type: PROFILE_LOADING
+    }
+}
+//Clear Profile
+export const clearCurrentProfile = () => {
+    return {
+        type: CLEAR_CURRENT_PROFILE
+    }
+}
+
 

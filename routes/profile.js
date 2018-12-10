@@ -60,8 +60,8 @@ router.get(
   });
   
 
-// route   GET profile/user/:user_id
-// desc    Get profile by user ID
+// route   GET profile/handle/:handle_id
+// desc    Get profile by handle 
 // access  Public
 
 router.get('/handle/:handle', (req, res) => {
