@@ -4,7 +4,6 @@ import { GET_PROFILE, GET_ERRORS, PROFILE_LOADING, SET_CURRENT_USER, CLEAR_CURRE
 
 
 //Get current profile
-
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading());
     axios.get('/profile')
@@ -14,11 +13,10 @@ export const getCurrentProfile = () => dispatch => {
             payload: res.data
         ***REMOVED***)
         )
-        //return an empty object
         .catch(err =>
             dispatch({
                 type: GET_PROFILE,
-                payload:{***REMOVED***
+                payload:null
             ***REMOVED***))
 
 ***REMOVED***
@@ -42,41 +40,25 @@ export const getProfiles = () => dispatch => {
             ***REMOVED***))
 
 ***REMOVED***
-//Profile Loading
-export const setProfileLoading = () => {
-    return {
-        type: PROFILE_LOADING
-    ***REMOVED***
-***REMOVED***
-//Clear Profile
-export const clearCurrentProfile = () => {
-    return {
-        type: CLEAR_CURRENT_PROFILE
-    ***REMOVED***
-***REMOVED***
 
-
-
-//Get profile by handle
-
+// Get profile by handle
 export const getProfileByHandle = (handle) => dispatch => {
     dispatch(setProfileLoading());
-    axios.get(`/profile/handle/${handle***REMOVED***`)
-    console.log(handle)
-    .then(res =>
-        dispatch ({
-            type: GET_PROFILE,
-            payload: res.data
-    ***REMOVED***)
-        )
-        //return an empty object
-     .catch(err =>
+    axios
+      .get(`/profile/handle/${handle***REMOVED***`)
+      .then(res =>
         dispatch({
-            type: GET_PROFILE,
-            payload:null
-    ***REMOVED***))
-
-***REMOVED***
+          type: GET_PROFILE,
+          payload: res.data
+        ***REMOVED***)
+      )
+      .catch(err =>
+        dispatch({
+          type: GET_PROFILE,
+          payload: {***REMOVED***
+        ***REMOVED***)
+      )
+  ***REMOVED***
 
 //Create Profile
 export const createProfile = (profileData, history) => dispatch => {
@@ -90,7 +72,6 @@ export const createProfile = (profileData, history) => dispatch => {
             ***REMOVED***))
 
 ***REMOVED***
-
 
 
 //Delete account & profile
@@ -112,4 +93,18 @@ export const deleteAccount = () => dispatch => {
         )
     ***REMOVED***
 ***REMOVED***
+
+//Profile Loading
+export const setProfileLoading = () => {
+    return {
+        type: PROFILE_LOADING
+    ***REMOVED***
+***REMOVED***
+//Clear Profile
+export const clearCurrentProfile = () => {
+    return {
+        type: CLEAR_CURRENT_PROFILE
+    ***REMOVED***
+***REMOVED***
+
 

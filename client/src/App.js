@@ -21,6 +21,7 @@ import Profiles from './component/profiles/Profiles';
 
 import { logoutUser ***REMOVED*** from './actions/authActions';
 import './App.css';
+import ProfileHeader from './component/profile/ProfileHeader';
 
 //Check for token
 if(localStorage.jwtToken){
@@ -62,8 +63,13 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/edit-profile" component={ EditProfile***REMOVED*** />
             </Switch>
-              <Route exact path="profile/handle/:handle" component={ Profile***REMOVED***/>
+            <Switch>
+              <Route exact path="/profile/:handle" component={Profile***REMOVED***/>
+              </Switch>
+              <Switch>
               <Route exact path="/profiles" component={Profiles***REMOVED*** />
+              </Switch>
+              <Route exact path="/tester/:handle" component={ProfileHeader***REMOVED***/>
 
 
 
