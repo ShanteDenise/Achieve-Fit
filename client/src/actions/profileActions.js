@@ -51,6 +51,7 @@ export const getProfileByHandle = (handle) => dispatch => {
           payload: res.data
         })
       )
+      
         .catch(err =>
         dispatch({
           type: GET_PROFILE,
