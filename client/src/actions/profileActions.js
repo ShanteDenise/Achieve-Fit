@@ -44,15 +44,14 @@ export const getProfiles = () => dispatch => {
 // Get profile by handle
 export const getProfileByHandle = (handle) => dispatch => {
     dispatch(setProfileLoading());
-    axios
-      .get(`/profile/handle/${handle***REMOVED***`)
+    axios.get(`/profile/handle/${handle***REMOVED***`)
       .then(res =>
         dispatch({
           type: GET_PROFILE,
           payload: res.data
         ***REMOVED***)
       )
-      .catch(err =>
+        .catch(err =>
         dispatch({
           type: GET_PROFILE,
           payload: {***REMOVED***

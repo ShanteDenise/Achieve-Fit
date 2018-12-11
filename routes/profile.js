@@ -74,8 +74,7 @@ router.get('/handle/:handle', (req, res) => {
           errors.noprofile = 'There is no profile for this user';
           res.status(404).json(errors);
         ***REMOVED***
-  
-        res.json(profile);
+          res.json(profile);
       ***REMOVED***)
       .catch(err =>
         res.status(404).json({ profile: 'There is no profile for this user' ***REMOVED***)
