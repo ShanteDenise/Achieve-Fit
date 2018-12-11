@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 class ProfileHeader extends Component {
   render() {
-    const { profile } = this.props;
 
+    const profile = { profile }
+  
     return (
       <div className="row">
         <div className="col-md-12">
@@ -13,7 +14,7 @@ class ProfileHeader extends Component {
               <div className="col-4 col-md-3 m-auto">
                 <img
                   className="rounded-circle"
-                  // src={profile.user.avatar}
+                  src={profile.user.avatar}
                   alt=""
                 />
               </div>
