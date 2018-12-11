@@ -64,10 +64,10 @@ router.get(
 // desc    Get profile by handle 
 // access  Public
 
-router.get('/handle/:handle', (req, res) => {
+router.get('profile/handle/:handle', (req, res) => {
     const errors = {***REMOVED***;
-  
-    Profile.findOne({ handle: req.params.user_id ***REMOVED***)
+    console.log(req.params.handle)
+    Profile.findOne({ handle: req.params.handle***REMOVED***)
       .populate('user', ['name', 'avatar'])
       .then(profile => {
         if (!profile) {
