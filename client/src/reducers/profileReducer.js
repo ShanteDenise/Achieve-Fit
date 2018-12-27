@@ -2,7 +2,7 @@ import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE, GET_PROFILES***REM
 
 
 const initialState = {
-    profile:null,
+    profile: null,
     profiles: null,
     loading: false
 ***REMOVED***
@@ -16,23 +16,24 @@ export default function(state = initialState, action){
             loading: true
         ***REMOVED***
         //If you get the profile loading is set to false and profile will show payload(data)
-        case GET_PROFILE:
-        return {
-            ...state,
-            profile:action.payload,
-            loading:false
-        ***REMOVED***;
+
         case GET_PROFILES:
         return {
             ...state,
             profiles: action.payload,
             loading: false
         ***REMOVED***
+        case GET_PROFILE:
+        return {
+            ...state,
+            profile: action.payload,
+            loading:false
+        ***REMOVED***
         case CLEAR_CURRENT_PROFILE:
         return {
                 ...state,
                 profile: null
-            ***REMOVED***
+             ***REMOVED***
 
         default: 
         return state

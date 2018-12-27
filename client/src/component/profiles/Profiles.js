@@ -2,7 +2,7 @@ import React, { Component ***REMOVED*** from 'react';
 import { connect ***REMOVED*** from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles ***REMOVED*** from '../../actions/profileActions'
-import loader from '../../blue_loader.jpg';
+import loader from '../../load.gif';
 import ProfileItems from './ProfileItems';
 
 
@@ -20,10 +20,9 @@ class Profiles extends Component {
         ***REMOVED***
             if(profiles.length > 0) {
                 profileItem = profiles.map(profile => (
-                    <ProfileItems key={profile._id***REMOVED*** profile={profile***REMOVED***/>
+                    <ProfileItems key={profile._id***REMOVED*** profile={profile***REMOVED***/> 
                 ))
             ***REMOVED***
-                console.log(profileItem)
                 profileItem = <h4> No profiles found</h4>
             ***REMOVED***
         ***REMOVED***

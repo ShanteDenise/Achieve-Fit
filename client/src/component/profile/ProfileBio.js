@@ -1,5 +1,5 @@
 import React, { Component ***REMOVED*** from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class ProfileBio extends Component {
     render() {
@@ -8,8 +8,7 @@ class ProfileBio extends Component {
 
         return (
             <div>
-                <div>This is my fight song. Take back my life song</div>
-                   {profile.bio***REMOVED***
+                 { profile.bio ***REMOVED***
             </div>
         
             
@@ -18,8 +17,8 @@ class ProfileBio extends Component {
         );
     ***REMOVED***
 ***REMOVED***
-ProfileBio.propTypes = {
-    profile: PropTypes.object.isRequired
-  ***REMOVED***;
+// ProfileBio.propTypes = {
+//     profile: PropTypes.object
+//   ***REMOVED***;
 
 export default ProfileBio;

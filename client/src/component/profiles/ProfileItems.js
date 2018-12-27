@@ -4,6 +4,7 @@ import { Link ***REMOVED*** from "react-router-dom";
 
 class ProfileItems extends Component {
   render() {
+    
     const { profile ***REMOVED*** = this.props;
 
     return (
@@ -11,9 +12,9 @@ class ProfileItems extends Component {
       <div className="container mb-4" style={{'display': 'block'***REMOVED******REMOVED***>
                     
           <div className="media mb-1">
-          <img className="align-self-center mr-3" src={profile.user.avatar***REMOVED*** style={{width: '200px', display: 'block'***REMOVED******REMOVED***></img>
+          <img className="align-self-center mr-3" alt="avatar" src={profile.user.avatar***REMOVED*** style={{width: '200px', display: 'block'***REMOVED******REMOVED***></img>
           <div className="media-body">
-          <h5 className="mb-2"><Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{profile.user.name***REMOVED***</Link></h5>
+          <h5 className="mb-2"><Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{profile.handle***REMOVED***</Link></h5> 
           {' '***REMOVED***
           <p className="mb-2">Location: {profile.location***REMOVED***</p>
           <ul className="list-group">
