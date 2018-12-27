@@ -11,11 +11,6 @@ const Profile = require('../models/Profile');
 // Validation
 const validatePostInput = require('../validation/post');
 
-// route   GET posts/test
-// desc    Tests post route
-// access  Public
-router.get('/test', (req, res) => res.json({ msg: 'Posts Works' }));
-
 // route   GET /posts
 // desc    Get posts
 // access  Public

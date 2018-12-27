@@ -21,7 +21,6 @@ import Profiles from './component/profiles/Profiles';
 
 import { logoutUser } from './actions/authActions';
 import './App.css';
-import ProfileHeader from './component/profile/ProfileHeader';
 
 //Check for token
 if(localStorage.jwtToken){
@@ -69,7 +68,9 @@ class App extends Component {
               <Switch>
               <Route exact path="/profiles" component={Profiles} />
               </Switch>
-              <Route exact path="/tester/:handle" component={ProfileHeader}/>
+              <Switch>
+              <Route exact path="/profiles/user/:user_id" component={Profile} />
+              </Switch>
 
 
 

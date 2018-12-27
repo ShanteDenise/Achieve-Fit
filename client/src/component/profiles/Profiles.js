@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProfiles } from '../../actions/profileActions'
-import loader from '../../blue_loader.jpg';
+import loader from '../../load.gif';
 import ProfileItems from './ProfileItems';
 
 
@@ -20,10 +20,9 @@ class Profiles extends Component {
         } else {
             if(profiles.length > 0) {
                 profileItem = profiles.map(profile => (
-                    <ProfileItems key={profile._id} profile={profile}/>
+                    <ProfileItems key={profile._id} profile={profile}/> 
                 ))
             } else {
-                console.log(profileItem)
                 profileItem = <h4> No profiles found</h4>
             }
         }

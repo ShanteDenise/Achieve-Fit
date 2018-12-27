@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 class ProfileBio extends Component {
     render() {
@@ -8,8 +8,7 @@ class ProfileBio extends Component {
 
         return (
             <div>
-                <div>This is my fight song. Take back my life song</div>
-                   {profile.bio}
+                 { profile.bio }
             </div>
         
             
@@ -18,8 +17,8 @@ class ProfileBio extends Component {
         );
     }
 }
-ProfileBio.propTypes = {
-    profile: PropTypes.object.isRequired
-  };
+// ProfileBio.propTypes = {
+//     profile: PropTypes.object
+//   };
 
 export default ProfileBio;

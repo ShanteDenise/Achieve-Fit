@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ProfileHeader from './ProfileHeader';
 import { getProfileByHandle } from '../../actions/profileActions';
-import loader from '../../blue_loader.jpg';
+import loader from '../../load.gif';
 import ProfileBio from './ProfileBio';
+
 
 class Profile extends Component {
   componentDidMount() {
@@ -27,6 +28,7 @@ class Profile extends Component {
     if (profile === null || loading) {
       profileContent = <img src={loader} style={{width: '150px', margin:'auto', display: 'block'}} alt="loading"/>
     } else {
+      
       profileContent = (
         <div>
           <div className="row">
@@ -37,9 +39,9 @@ class Profile extends Component {
             </div>
             <div className="col-md-6" />
           </div>
-          <ProfileHeader profile={profile} />
+          <ProfileHeader profile = { profile } />
      
-           <ProfileBio profile= {profile}/>
+           <ProfileBio profile = {profile}/>
       
         </div>
        

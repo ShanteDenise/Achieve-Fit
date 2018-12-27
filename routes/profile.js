@@ -6,7 +6,6 @@ const passport = require('passport');
 
 // Load Validation
 const validateProfileInput = require('../validation/profile');
-const validateEducationInput = require('../validation/education');
 
 // Load Profile Model
 const Profile = require('../models/Profile');
@@ -60,26 +59,43 @@ router.get(
   });
   
 
-// route   GET profile/handle/:handle_id
+// route   GET profile/handle/:handle
 // desc    Get profile by handle 
 // access  Public
 
-router.get('profile/handle/:handle', (req, res) => {
+router.get('/handle/:handle', (req, res) => {
     const errors = {};
-    console.log(req.params.handle)
-    Profile.findOne({ handle: req.params.handle})
+
+    Profile.findOne({ handle: req.params.handle })
       .populate('user', ['name', 'avatar'])
       .then(profile => {
         if (!profile) {
           errors.noprofile = 'There is no profile for this user';
           res.status(404).json(errors);
         }
-          res.json(profile);
+        res.json(profile);
       })
-      .catch(err =>
-        res.status(404).json({ profile: 'There is no profile for this user' })
+      .catch(err => res.status(404).json(err)
       );
   });
+
+
+router.get('/user/:user_id', (req, res) => {
+  const errors = {};
+
+  Profile.findOne({ user: req.params.user_id })
+  .populate('user', ['name', 'avatar'])
+  .then(profile => {
+    if(!profile) {
+      errors.noprofile = 'There is no profile for this user';
+    res.status(404).json(errors);
+    }
+    res.json(profile)
+})
+.catch(err => 
+  res.status(404).json({profile: 'There is no profile for this user'})
+    );
+});
   
   // route   POST /profile
   // desc    Create or edit user profile

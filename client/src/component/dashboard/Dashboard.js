@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import ProfileEdit from './ProfileEdit';
-import loader from '../../blue_loader.jpg';
+import loader from '../../load.gif';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -14,6 +14,7 @@ class Dashboard extends Component {
   onDeleteClick(e){
     this.props.deleteAccount();
   }
+
 
   render() {
     const { user } = this.props.auth;
@@ -45,8 +46,9 @@ class Dashboard extends Component {
                 ))}
               </ul>
           </div>
+          <div> <button onClick={this.handleCreateNewIdea}>New Idea</button>
           </div>
-          
+          </div>
           <ProfileEdit/>
           <div style={{ marginBottom: '50px'}}/>
           <button onClick={this.onDeleteClick.bind(this)} className="btn btn-danger">Delete My Profile</button>
@@ -79,6 +81,9 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
+
+    
+    
     );
   }
 }

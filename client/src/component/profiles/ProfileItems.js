@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 class ProfileItems extends Component {
   render() {
+    
     const { profile } = this.props;
 
     return (
@@ -11,9 +12,9 @@ class ProfileItems extends Component {
       <div className="container mb-4" style={{'display': 'block'}}>
                     
           <div className="media mb-1">
-          <img className="align-self-center mr-3" src={profile.user.avatar} style={{width: '200px', display: 'block'}}></img>
+          <img className="align-self-center mr-3" alt="avatar" src={profile.user.avatar} style={{width: '200px', display: 'block'}}></img>
           <div className="media-body">
-          <h5 className="mb-2"><Link to={`/profile/${profile.handle}`}>{profile.user.name}</Link></h5>
+          <h5 className="mb-2"><Link to={`/profile/${profile.handle}`}>{profile.handle}</Link></h5> 
           {' '}
           <p className="mb-2">Location: {profile.location}</p>
           <ul className="list-group">
