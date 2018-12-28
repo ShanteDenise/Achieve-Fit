@@ -12,7 +12,7 @@ For Project 3 I created a full stack application using # (M)Mongoose,# (E)Expres
 Inspiration:
 ----
 I feel that is important to set goals for your physical health. I created this app wanting other fitness lover to be able interact and share their fitness goals. I wanted them to be able to keep track of their daily
-fitness numbers using the FitBit API
+fitness numbers using the FitBit API visible by only the user. 
 
 Trello Board
 ----
