@@ -13,28 +13,20 @@ class ProfileHeader extends Component {
               <div className="col-4 col-md-3 m-auto">
                 <img
                   className="rounded-circle"
-                  src={profile.avatar***REMOVED***
+                  src={profile.user.avatar***REMOVED***
                   alt="user avatar"
                 />
               </div>
             </div>
             <div className="text-center">
               <h1 className="display-4 text-center"></h1>
-              <p className="lead text-center">
-                {profile.name***REMOVED***{' '***REMOVED***
-    
-              </p>
-              {(profile.location) ? null : <p>{profile.location***REMOVED***</p>***REMOVED***
-              <p>
-                  <a
-                    className="text-white p-2"
-                    href={profile.website***REMOVED***
-                    target="_blank"
-                  >
-                    <i className="fas fa-globe fa-2x" />
-                  </a>
-               
+              <h2 className="text-center">
+                {profile.handle***REMOVED***{' '***REMOVED***   
+              </h2>
 
+              <p>Located in: {profile.location***REMOVED***</p>
+              <p>
+    
                   <a
                     className="text-white p-2"
                     href='https://www.linkedin.com/feed/'

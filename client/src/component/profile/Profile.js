@@ -6,7 +6,7 @@ import ProfileHeader from './ProfileHeader';
 import { getProfileByHandle ***REMOVED*** from '../../actions/profileActions';
 import loader from '../../load.gif';
 import ProfileBio from './ProfileBio';
-
+import ProfileGoals from './ProfileGoals';
 
 class Profile extends Component {
   componentDidMount() {
@@ -42,6 +42,8 @@ class Profile extends Component {
           <ProfileHeader profile = { profile ***REMOVED*** />
      
            <ProfileBio profile = {profile***REMOVED***/>
+
+           <ProfileGoals profile = {profile***REMOVED***/>
       
         </div>
        
