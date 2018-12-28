@@ -84,9 +84,6 @@ NewsFeed will be added
 
 User will be able to like posts and comments from other users
 
-Users will be able to see their profile after it has been edited
-
-
 Fully Functional Models 
 
 Fitness Profile Search
