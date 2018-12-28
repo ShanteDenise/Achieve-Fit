@@ -13,28 +13,20 @@ class ProfileHeader extends Component {
               <div className="col-4 col-md-3 m-auto">
                 <img
                   className="rounded-circle"
-                  src={profile.avatar}
+                  src={profile.user.avatar}
                   alt="user avatar"
                 />
               </div>
             </div>
             <div className="text-center">
               <h1 className="display-4 text-center"></h1>
-              <p className="lead text-center">
-                {profile.name}{' '}
-    
-              </p>
-              {(profile.location) ? null : <p>{profile.location}</p>}
-              <p>
-                  <a
-                    className="text-white p-2"
-                    href={profile.website}
-                    target="_blank"
-                  >
-                    <i className="fas fa-globe fa-2x" />
-                  </a>
-               
+              <h2 className="text-center">
+                {profile.handle}{' '}   
+              </h2>
 
+              <p>Located in: {profile.location}</p>
+              <p>
+    
                   <a
                     className="text-white p-2"
                     href='https://www.linkedin.com/feed/'
