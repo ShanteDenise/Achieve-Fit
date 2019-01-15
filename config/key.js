@@ -1,6 +1,7 @@
-module.exports = {
-    mongoURI:'mongodb://shante:Babydoll19@ds031721.mlab.com:31721/achieve-fit',
-    secretOrKey: 'secret'
+if(process.env.NODE_ENV === 'production') {
+    module.exports = require('./keys');
+} else {
+    module.exports = require('./keys_dev');
 
-};
+}
 
