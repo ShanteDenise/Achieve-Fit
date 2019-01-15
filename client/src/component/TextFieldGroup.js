@@ -11,30 +11,30 @@ const TextFieldGroup =  ({
     type,
     onChange,
     disabled
-***REMOVED***) => {
+}) => {
     return (
 
             <div className='form-group'>
                 <input
-                    type={type***REMOVED***
+                    type={type}
                     className={classnames('form-control form-control-lg', {
                         'is-invalid' : error  
-                    ***REMOVED***)***REMOVED***
-                    placeholder={placeholder***REMOVED***
-                    name={name***REMOVED***
-                    value={value***REMOVED***
-                    onChange={onChange***REMOVED***
-                    disabled={disabled***REMOVED***
+                    })}
+                    placeholder={placeholder}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    disabled={disabled}
                     />
-                     {info && <small className="form-text text-muted"> {info***REMOVED***</small>***REMOVED***
-                     {error && <div className="form-text text-muted"> {error***REMOVED***</div>***REMOVED***
-                     {/* input error if there is an error under the form */***REMOVED***
+                     {info && <small className="form-text text-muted"> {info}</small>}
+                     {error && <div className="form-text text-muted"> {error}</div>}
+                     {/* input error if there is an error under the form */}
 
             </div>
                 
          
         );
-    ***REMOVED***
+    }
 
 TextFieldGroup.propTypes ={
     name: PropTypes.string.isRequired,
@@ -47,9 +47,9 @@ TextFieldGroup.propTypes ={
     onChange: PropTypes.func.isRequired,
     disabled: PropTypes.string
 
-***REMOVED***
+}
 TextFieldGroup.defaultProps = {
     type: 'text'
-***REMOVED***
+}
 
 export default TextFieldGroup;

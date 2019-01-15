@@ -1,9 +1,9 @@
-import React, { Component ***REMOVED*** from 'react';
-import { Link ***REMOVED*** from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { connect ***REMOVED*** from 'react-redux'
-import { logoutUser ***REMOVED*** from '../../actions/authActions'
-import { clearCurrentProfile ***REMOVED*** from '../../actions/profileActions'
+import { connect } from 'react-redux'
+import { logoutUser } from '../../actions/authActions'
+import { clearCurrentProfile } from '../../actions/profileActions'
 
 class Navbar extends Component {
   onLogout(e) {
@@ -13,10 +13,10 @@ class Navbar extends Component {
     //when Logout button is selected
     this.props.clearCurrentProfile(); 
     this.props.logoutUser();
-  ***REMOVED***
+  }
 
     render() {
-      const  { isAuthenticated, user ***REMOVED*** = this.props.auth;
+      const  { isAuthenticated, user } = this.props.auth;
       console.log("User",user)
 
       const auth  = (
@@ -26,9 +26,9 @@ class Navbar extends Component {
                 <Link className="nav-item mr-8" to="/feed">NewsFeed</Link>
                 <li className="nav-item">
                  <a href = "" 
-                 onClick={this.onLogout.bind(this)***REMOVED***className="nav-link">
-                 <img className="rounded-circle" src={user.avatar***REMOVED*** alt={user.name***REMOVED*** style={{ width: '25px', marginRight:'5px'***REMOVED******REMOVED***/>
-                 {' '***REMOVED***Logout
+                 onClick={this.onLogout.bind(this)}className="nav-link">
+                 <img className="rounded-circle" src={user.avatar} alt={user.name} style={{ width: '25px', marginRight:'5px'}}/>
+                 {' '}Logout
                  </a>                  
               </li>          
           </ul>
@@ -68,31 +68,31 @@ class Navbar extends Component {
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item">
                     <Link className="nav-link" to="/profiles">
-                      {' '***REMOVED***
+                      {' '}
                       Fitness Profiles
                     </Link>
                   </li>
                 </ul>
     
-                {isAuthenticated ? auth: unAuthLinks***REMOVED***
-                {/* isAuthenticated is coming from auth Property which comes from state in redux */***REMOVED***
+                {isAuthenticated ? auth: unAuthLinks}
+                {/* isAuthenticated is coming from auth Property which comes from state in redux */}
 
               </div>
             </div>
           </nav>
         );
-      ***REMOVED***   
+      }   
     
-    ***REMOVED***
+    }
     Navbar.propTypes = {
       logoutUser: PropTypes.func.isRequired,
       auth: PropTypes.object.isRequired
-    ***REMOVED***
+    }
     const mapStateToProps = (state) => ({
       auth: state.auth,
-    ***REMOVED***)
+    })
     
   
     
 
-export default connect(mapStateToProps, {logoutUser, clearCurrentProfile***REMOVED***)(Navbar);
+export default connect(mapStateToProps, {logoutUser, clearCurrentProfile})(Navbar);

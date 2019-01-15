@@ -1,10 +1,10 @@
 
 //Boilerplate code for redux and redux dev tools
-import { createStore, applyMiddleware, compose ***REMOVED*** from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
-const initialState = {***REMOVED***;
+const initialState = {};
 
 const middleware = [thunk];
 

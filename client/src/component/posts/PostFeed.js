@@ -1,17 +1,17 @@
-import React, { Component ***REMOVED*** from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PostItem from './PostItem';
 
 class PostFeed extends Component {
   render() {
-    const { posts ***REMOVED*** = this.props;
+    const { posts } = this.props;
 
-    return posts.map(post => <PostItem key={post._id***REMOVED*** post={post***REMOVED*** />);
-  ***REMOVED***
-***REMOVED***
+    return posts.map(post => <PostItem key={post._id} post={post} />);
+  }
+}
 
 PostFeed.propTypes = {
   posts: PropTypes.array.isRequired
-***REMOVED***;
+};
 
 export default PostFeed;

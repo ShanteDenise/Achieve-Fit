@@ -15,28 +15,28 @@ const User = require('../models/User');
 // route   GET profile/test
 // desc    Tests profile route
 // access  Public
-router.get('/test', (req, res) => res.json({ msg: 'Profile Works' ***REMOVED***));
+router.get('/test', (req, res) => res.json({ msg: 'Profile Works' }));
 
 // route   GET /profile
 // desc    Get current users profile
 // access  Private
 router.get(
     '/',
-    passport.authenticate('jwt', { session: false ***REMOVED***),
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
-      const errors = {***REMOVED***;
+      const errors = {};
   
-      Profile.findOne({ user: req.user.id ***REMOVED***)
+      Profile.findOne({ user: req.user.id })
         .populate('user', ['name', 'avatar'])
         .then(profile => {
           if (!profile) {
             errors.noprofile = 'There is no profile for this user';
             return res.status(404).json(errors);
-          ***REMOVED***
+          }
           res.json(profile);
-        ***REMOVED***)
+        })
         .catch(err => res.status(404).json(err));
-    ***REMOVED***
+    }
   );
 
   //route profiles/all
@@ -44,7 +44,7 @@ router.get(
   //access public
 
   router.get('/all', (req, res) => {
-    const errors = {***REMOVED***;
+    const errors = {};
   
     Profile.find()
       .populate('user', ['name', 'avatar'])
@@ -52,11 +52,11 @@ router.get(
         if (!profiles) {
           errors.noprofile = 'There are no profiles';
           return res.status(404).json(errors);
-        ***REMOVED***
+        }
         res.json(profiles);
-      ***REMOVED***)
-      .catch(err => res.status(404).json({ profile: 'There are no profiles' ***REMOVED***));
-  ***REMOVED***);
+      })
+      .catch(err => res.status(404).json({ profile: 'There are no profiles' }));
+  });
   
 
 // route   GET profile/handle/:handle
@@ -64,56 +64,56 @@ router.get(
 // access  Public
 
 router.get('/handle/:handle', (req, res) => {
-    const errors = {***REMOVED***;
+    const errors = {};
 
-    Profile.findOne({ handle: req.params.handle ***REMOVED***)
+    Profile.findOne({ handle: req.params.handle })
       .populate('user', ['name', 'avatar'])
       .then(profile => {
         if (!profile) {
           errors.noprofile = 'There is no profile for this user';
           res.status(404).json(errors);
-        ***REMOVED***
+        }
         res.json(profile);
-      ***REMOVED***)
+      })
       .catch(err => res.status(404).json(err)
       );
-  ***REMOVED***);
+  });
 
 
 router.get('/user/:user_id', (req, res) => {
-  const errors = {***REMOVED***;
+  const errors = {};
 
-  Profile.findOne({ user: req.params.user_id ***REMOVED***)
+  Profile.findOne({ user: req.params.user_id })
   .populate('user', ['name', 'avatar'])
   .then(profile => {
     if(!profile) {
       errors.noprofile = 'There is no profile for this user';
     res.status(404).json(errors);
-    ***REMOVED***
+    }
     res.json(profile)
-***REMOVED***)
+})
 .catch(err => 
-  res.status(404).json({profile: 'There is no profile for this user'***REMOVED***)
+  res.status(404).json({profile: 'There is no profile for this user'})
     );
-***REMOVED***);
+});
   
   // route   POST /profile
   // desc    Create or edit user profile
   // access  Private
   router.post(
     '/',
-    passport.authenticate('jwt', { session: false ***REMOVED***),
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
-      const { errors, isValid ***REMOVED*** = validateProfileInput(req.body);
+      const { errors, isValid } = validateProfileInput(req.body);
   
       // Check Validation
       if (!isValid) {
         // Return any errors with 400 status
         return res.status(400).json(errors);
-      ***REMOVED***
+      }
   
       // Get fields
-      const profileFields = {***REMOVED***;
+      const profileFields = {};
       profileFields.user = req.user.id;
       if (req.body.handle) profileFields.handle = req.body.handle;
       if (req.body.location) profileFields.location = req.body.location;
@@ -124,34 +124,34 @@ router.get('/user/:user_id', (req, res) => {
       // Skills - Spilt into array
       if (typeof req.body.goals !== 'undefined') {
         profileFields.goals = req.body.goals.split(',');
-      ***REMOVED***
+      }
   
   
-      Profile.findOne({ user: req.user.id ***REMOVED***).then(profile => {
+      Profile.findOne({ user: req.user.id }).then(profile => {
         if (profile) {
           // Update
           Profile.findOneAndUpdate(
-            { user: req.user.id ***REMOVED***,
-            { $set: profileFields ***REMOVED***,
-            { new: true ***REMOVED***
+            { user: req.user.id },
+            { $set: profileFields },
+            { new: true }
           ).then(profile => res.json(profile));
-        ***REMOVED***
+        } else {
           // Create
   
           // Check if handle exists
-          Profile.findOne({ handle: profileFields.handle ***REMOVED***).then(profile => {
+          Profile.findOne({ handle: profileFields.handle }).then(profile => {
             if (profile) {
               errors.handle = 'That handle already exists';
               res.status(400).json(errors);
-            ***REMOVED***
+            }
   
             // Save Profile
             new Profile(profileFields).save()
             .then(profile => res.json(profile));
-          ***REMOVED***);
-        ***REMOVED***
-      ***REMOVED***);
-    ***REMOVED***
+          });
+        }
+      });
+    }
   );
   
 
@@ -160,15 +160,15 @@ router.get('/user/:user_id', (req, res) => {
   // access  Private
   router.delete(
     '/',
-    passport.authenticate('jwt', { session: false ***REMOVED***),
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
-      Profile.findOneAndRemove({ user: req.user.id ***REMOVED***).then(() => {
-        User.findOneAndRemove({ _id: req.user.id ***REMOVED***).then(() => 
+      Profile.findOneAndRemove({ user: req.user.id }).then(() => {
+        User.findOneAndRemove({ _id: req.user.id }).then(() => 
         
-          res.json({ success: true ***REMOVED***)
+          res.json({ success: true })
         );
-      ***REMOVED***);
-    ***REMOVED***
+      });
+    }
   );
   
   module.exports = router;

@@ -1,5 +1,5 @@
 
-import React, { Component ***REMOVED*** from 'react';
+import React, { Component } from 'react';
 
 class ProfileFitBit extends Component {
     render() {
@@ -9,7 +9,7 @@ class ProfileFitBit extends Component {
                 
             </div>
         );
-    ***REMOVED***
-***REMOVED***
+    }
+}
 
 export default ProfileFitBit;

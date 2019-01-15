@@ -1,8 +1,8 @@
-import React, { Component ***REMOVED*** from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter ***REMOVED*** from 'react-router-dom'
-import { connect ***REMOVED*** from 'react-redux';
-import { registerUser ***REMOVED*** from '../../actions/authActions'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { registerUser } from '../../actions/authActions'
 import TextFieldGroup from '../TextFieldGroup'
 
 
@@ -14,22 +14,22 @@ class Register extends Component {
       email: '',
       password: '',
       password2: '',
-      errors: {***REMOVED***
-    ***REMOVED***;
+      errors: {}
+    };
 
    
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-  ***REMOVED***
+  }
   componentWillReceiveProps(nextProps){
     if(nextProps.errors){
-      this.setState({ errors: nextProps.errors***REMOVED***)
-    ***REMOVED***
-  ***REMOVED***
+      this.setState({ errors: nextProps.errors})
+    }
+  }
 
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value ***REMOVED***);
-  ***REMOVED***
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
   onSubmit(e) {
     e.preventDefault();
@@ -39,15 +39,15 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
-    ***REMOVED***;
+    };
     //redirect to login page
     this.props.registerUser(newUser, this.props.history)
 
 
-  ***REMOVED***
+  }
 
   render() {
-    const { errors ***REMOVED*** = this.state;
+    const { errors } = this.state;
 
     return (
       <div className="register">
@@ -58,22 +58,22 @@ class Register extends Component {
               <p className="lead text-center">
                 Create your Fitness Profile
               </p>
-              <form noValidate onSubmit={this.onSubmit***REMOVED***>
+              <form noValidate onSubmit={this.onSubmit}>
                   <TextFieldGroup
                   placeholder="Name"
                   name="name"
-                  value={this.state.name***REMOVED***
-                  onChange={this.onChange***REMOVED***
-                  error={errors.name***REMOVED***
+                  value={this.state.name}
+                  onChange={this.onChange}
+                  error={errors.name}
                   />
 
                    <TextFieldGroup
                   placeholder="Email Address"
                   name="email"
                   type="email"
-                  value={this.state.email***REMOVED***
-                  onChange={this.onChange***REMOVED***
-                  error={errors.email***REMOVED***
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}
                   info = "Create a Gravator email for a profile picture"
                   />
 
@@ -81,18 +81,18 @@ class Register extends Component {
                   placeholder="Password"
                   name="password"
                   type="password"
-                  value={this.state.password***REMOVED***
-                  onChange={this.onChange***REMOVED***
-                  error={errors.password***REMOVED***
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
                   />
 
                   <TextFieldGroup
                   placeholder="Confirm Password"
                   name="password2"
                   type="password"
-                  value={this.state.password2***REMOVED***
-                  onChange={this.onChange***REMOVED***
-                  error={errors.password2***REMOVED***
+                  value={this.state.password2}
+                  onChange={this.onChange}
+                  error={errors.password2}
                   />
             
                 <input type="submit" className="btn btn-info btn-block mt-4" />
@@ -102,19 +102,19 @@ class Register extends Component {
         </div>
       </div>
     );
-  ***REMOVED***
-***REMOVED***
+  }
+}
 
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isrequired
  
-***REMOVED***;
+};
 
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
-***REMOVED***)
-export default connect(mapStateToProps, {registerUser ***REMOVED***)(withRouter(Register));
+})
+export default connect(mapStateToProps, {registerUser })(withRouter(Register));
 

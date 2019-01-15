@@ -1,7 +1,7 @@
-import React, { Component ***REMOVED*** from 'react';
-import { connect ***REMOVED*** from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getProfiles ***REMOVED*** from '../../actions/profileActions'
+import { getProfiles } from '../../actions/profileActions'
 import loader from '../../load.gif';
 import ProfileItems from './ProfileItems';
 
@@ -9,23 +9,23 @@ import ProfileItems from './ProfileItems';
 class Profiles extends Component {
     componentDidMount(){
         this.props.getProfiles();
-    ***REMOVED***
+    }
   
     render() {
-        const { profiles, loading ***REMOVED*** = this.props.profile;
+        const { profiles, loading } = this.props.profile;
         let profileItem;
       //If there are no profiles display loading
         if(profiles === null || loading) {
-            profileItem = <img src={loader***REMOVED*** style={{width: '150px', margin:'auto', display: 'block'***REMOVED******REMOVED*** alt="loading"/>
-        ***REMOVED***
+            profileItem = <img src={loader} style={{width: '150px', margin:'auto', display: 'block'}} alt="loading"/>
+        } else {
             if(profiles.length > 0) {
                 profileItem = profiles.map(profile => (
-                    <ProfileItems key={profile._id***REMOVED*** profile={profile***REMOVED***/> 
+                    <ProfileItems key={profile._id} profile={profile}/> 
                 ))
-            ***REMOVED***
+            } else {
                 profileItem = <h4> No profiles found</h4>
-            ***REMOVED***
-        ***REMOVED***
+            }
+        }
 
         return (
             <div className="profiles">
@@ -36,7 +36,7 @@ class Profiles extends Component {
                                 <p className="lead text-center">
                                     Connect with Fitness Fanatics and Create Your Own Goals For A Healthier Lifestyle.  
                                 </p>
-                                {profileItem***REMOVED***
+                                {profileItem}
                         </div>
                     </div>
                 </div>
@@ -44,16 +44,16 @@ class Profiles extends Component {
         )
            
     
-    ***REMOVED***
-***REMOVED***
+    }
+}
 Profiles.propTypes = {
     getProfiles: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired
-***REMOVED***
+}
 
 const mapStateToProps = state => ({
     profile: state.profile,
-***REMOVED***)
+})
 
 
-export default connect(mapStateToProps, { getProfiles***REMOVED***)(Profiles);
+export default connect(mapStateToProps, { getProfiles})(Profiles);

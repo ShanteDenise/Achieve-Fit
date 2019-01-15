@@ -10,7 +10,7 @@ const app = express();
 
 
 //body parser middleware
-app.use(bodyParser.urlencoded({extended:false***REMOVED***));
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 const db = require('./config/key').mongoURI;
@@ -35,12 +35,12 @@ app.use(express.static(__dirname + '/client/build/'))
 
 app.get('/', (req, res) => {
  res.sendFile(__dirname + '/client/build/index.html')
-***REMOVED***)
+})
 
 app.get('/*', (req, res) => {
  res.sendFile(__dirname + '/client/build/index.html')
-***REMOVED***)
+})
 
 const port = process.env.PORT || 3001;
 
-app.listen(port, () => console.log(`Server running on port ${port***REMOVED***`));
+app.listen(port, () => console.log(`Server running on port ${port}`));

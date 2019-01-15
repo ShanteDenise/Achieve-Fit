@@ -1,7 +1,7 @@
-import React, { Component ***REMOVED*** from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect ***REMOVED*** from 'react-redux';
-import { loginUser ***REMOVED*** from '../../actions/authActions';
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions/authActions';
 import TextFieldGroup from '../TextFieldGroup';
 
 class Login extends Component {
@@ -10,29 +10,29 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {***REMOVED***
-    ***REMOVED***;
+      errors: {}
+    };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-  ***REMOVED***
+  }
 
   componentDidMount() {
     //check to see if the user is logged in. Push to dashboard
     if (this.props.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
-    ***REMOVED***
-  ***REMOVED***
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push('/dashboard');
-    ***REMOVED***
+    }
 
     if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors ***REMOVED***);
-    ***REMOVED***
-  ***REMOVED***
+      this.setState({ errors: nextProps.errors });
+    }
+  }
 
   onSubmit(e) {
     e.preventDefault();
@@ -40,17 +40,17 @@ class Login extends Component {
     const userData = {
       email: this.state.email,
       password: this.state.password
-    ***REMOVED***;
+    };
 
     this.props.loginUser(userData);
-  ***REMOVED***
+  }
 
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value ***REMOVED***);
-  ***REMOVED***
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
   render() {
-    const { errors ***REMOVED*** = this.state;
+    const { errors } = this.state;
 
     return (
       <div className="login">
@@ -62,23 +62,23 @@ class Login extends Component {
                 Sign in to your Achieve-FIT account
               </p>
 
-              <form onSubmit={this.onSubmit***REMOVED***>
+              <form onSubmit={this.onSubmit}>
                   <TextFieldGroup
                   placeholder="Email Address"
                   name="email"
                   type="email"
-                  value={this.state.email***REMOVED***
-                  onChange={this.onChange***REMOVED***
-                  error={errors.email***REMOVED***
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}
                   />
 
                    <TextFieldGroup
                   placeholder="Password"
                   name="password"
                   type="password"
-                  value={this.state.password***REMOVED***
-                  onChange={this.onChange***REMOVED***
-                  error={errors.password***REMOVED***
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
                   />
        
                 <input type="submit" className="btn btn-info btn-block mt-4" />
@@ -93,18 +93,18 @@ class Login extends Component {
      
 
     );
-  ***REMOVED***
-***REMOVED***
+  }
+}
 
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
-***REMOVED***;
+};
 
 const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
-***REMOVED***);
+});
 
-export default connect(mapStateToProps, { loginUser ***REMOVED***)(Login);
+export default connect(mapStateToProps, { loginUser })(Login);

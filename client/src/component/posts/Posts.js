@@ -1,25 +1,25 @@
-import React, { Component ***REMOVED*** from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect ***REMOVED*** from 'react-redux';
+import { connect } from 'react-redux';
 import PostForm from './PostForm';
 import PostFeed from './PostFeed';
-import { getPosts ***REMOVED*** from '../../actions/postActions';
+import { getPosts } from '../../actions/postActions';
 import loader from "../../load.gif";
 
 class Posts extends Component {
   componentDidMount() {
     this.props.getPosts();
-  ***REMOVED***
+  }
 
   render() {
-    const { posts, loading ***REMOVED*** = this.props.post;
+    const { posts, loading } = this.props.post;
     let postContent;
 
     if (posts === null || loading) {
       postContent = loader;
-    ***REMOVED***
-      postContent = <PostFeed posts={posts***REMOVED*** />;
-    ***REMOVED***
+    } else {
+      postContent = <PostFeed posts={posts} />;
+    }
 
     return (
       <div className="feed">
@@ -27,22 +27,22 @@ class Posts extends Component {
           <div className="row">
             <div className="col-md-12">
               <PostForm />
-              {postContent***REMOVED***
+              {postContent}
             </div>
           </div>
         </div>
       </div>
     );
-  ***REMOVED***
-***REMOVED***
+  }
+}
 
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired
-***REMOVED***;
+};
 
 const mapStateToProps = state => ({
   post: state.post
-***REMOVED***);
+});
 
-export default connect(mapStateToProps, { getPosts ***REMOVED***)(Posts);
+export default connect(mapStateToProps, { getPosts })(Posts);

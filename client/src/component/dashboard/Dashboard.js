@@ -1,35 +1,35 @@
-import React, { Component ***REMOVED*** from "react";
-import { Link ***REMOVED*** from "react-router-dom";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { connect ***REMOVED*** from "react-redux";
-import { getCurrentProfile, deleteAccount ***REMOVED*** from "../../actions/profileActions";
+import { connect } from "react-redux";
+import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
 import ProfileEdit from "./ProfileEdit";
 import loader from "../../load.gif";
 
 class Dashboard extends Component {
   componentDidMount() {
     this.props.getCurrentProfile();
-  ***REMOVED***
+  }
 
   onDeleteClick(e) {
     this.props.deleteAccount();
-  ***REMOVED***
+  }
 
   render() {
-    const { user ***REMOVED*** = this.props.auth;
-    const { profile, loading ***REMOVED*** = this.props.profile;
+    const { user } = this.props.auth;
+    const { profile, loading } = this.props.profile;
 
     let dashboardContent;
     //When the dashboard is loading the dashboard content will be set to loading gif
     if (profile === null || loading) {
       dashboardContent = (
         <img
-          src={loader***REMOVED***
-          style={{ width: "200px", margin: "auto", display: "block" ***REMOVED******REMOVED***
+          src={loader}
+          style={{ width: "200px", margin: "auto", display: "block" }}
           alt="loading"
         />
       );
-    ***REMOVED***
+    } else {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
@@ -37,45 +37,45 @@ class Dashboard extends Component {
             <div className="media">
               <img
                 className="align-self-center mr-3"
-                src={user.avatar***REMOVED***
-                style={{ width: "200px", display: "block" ***REMOVED******REMOVED***
+                src={user.avatar}
+                style={{ width: "200px", display: "block" }}
               />
               <div className="media-body">
                 <h5 className="mt-2 mb-3">
-                  Welcome{" "***REMOVED***
-                  <Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{user.name***REMOVED***</Link>
+                  Welcome{" "}
+                  <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
                 </h5>
                 <h5>My Bio: </h5>
                 <p className="lead text-muted bio-text">
-                  {profile.bio***REMOVED*** />
-                </p>{" "***REMOVED***
+                  {profile.bio} />
+                </p>{" "}
                 <h5>My Goals:</h5>
                 <ul className="list-group">
                   {profile.goals.map((goals, index) => (
-                    <li key={index***REMOVED*** className="list-group-item">
+                    <li key={index} className="list-group-item">
                       <i className="fa fa-check pr-1" />
-                      {goals***REMOVED***
+                      {goals}
                     </li>
 
-                  ))***REMOVED***
+                  ))}
                 </ul>
                 <h5 className="mt-3">My Status: </h5>
                 <p className="lead bio-text mt-2">
-                  {profile.status***REMOVED*** 
+                  {profile.status} 
                 </p>
               </div>
             </div>
             <ProfileEdit />
-            <div style={{ marginBottom: "50px" ***REMOVED******REMOVED*** />
+            <div style={{ marginBottom: "50px" }} />
             <button
-              onClick={this.onDeleteClick.bind(this)***REMOVED***
+              onClick={this.onDeleteClick.bind(this)}
               className="btn btn-danger"
             >
               Delete My Profile
             </button>
           </div>
         );
-      ***REMOVED***
+      } else {
         // User is logged in but has no profile
         dashboardContent = (
           <div>
@@ -86,8 +86,8 @@ class Dashboard extends Component {
             </Link>
           </div>
         );
-      ***REMOVED***
-    ***REMOVED***
+      }
+    }
 
     //render the dashboard content below
     return (
@@ -101,7 +101,7 @@ class Dashboard extends Component {
                   <h3 className="display-4 text-center text-danger">
                     Dashboard
                   </h3>
-                  {dashboardContent***REMOVED***
+                  {dashboardContent}
                 </div>
               </div>
             </div>
@@ -109,8 +109,8 @@ class Dashboard extends Component {
         </div>
       </div>
     );
-  ***REMOVED***
-***REMOVED***
+  }
+}
 
 //Bring in proptypes
 Dashboard.propTypes = {
@@ -118,15 +118,15 @@ Dashboard.propTypes = {
   deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
-***REMOVED***;
+};
 
 //bring in profile and authentication
 const mapStateToProps = state => ({
   profile: state.profile,
   auth: state.auth
-***REMOVED***);
+});
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile, deleteAccount ***REMOVED***
+  { getCurrentProfile, deleteAccount }
 )(Dashboard);

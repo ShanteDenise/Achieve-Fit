@@ -5,11 +5,11 @@ const setAuthToken = token => {
     if(token) {
         //Apply to every request
         axios.defaults.headers.common['Authorization'] = token;
-    ***REMOVED***
+    } else {
         //If the token is not there then delete it 
         delete axios.defaults.headers.common['Authorization']
 
-        ***REMOVED***
-    ***REMOVED***
+        }
+    }
 
     export default setAuthToken;

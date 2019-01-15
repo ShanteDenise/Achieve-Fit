@@ -1,10 +1,10 @@
-import { SET_CURRENT_USER ***REMOVED*** from '../actions/types'
+import { SET_CURRENT_USER } from '../actions/types'
 import isEmpty from '../validation/is-empty'
 
 const initialSate = {
     isAuthenticated: false,
-    user: {***REMOVED***
-***REMOVED***
+    user: {}
+}
 
 export default function(state = initialSate, action){
     switch(action.type){
@@ -13,8 +13,8 @@ export default function(state = initialSate, action){
             ...state,
             isAuthenticated: !isEmpty(action.payload),
             user: action.payload
-        ***REMOVED***
+        }
         default:
             return state;
-    ***REMOVED***
-***REMOVED***
+    }
+}

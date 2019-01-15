@@ -1,14 +1,14 @@
-import { GET_ERRORS, CLEAR_ERRORS ***REMOVED*** from "../actions/types";
+import { GET_ERRORS, CLEAR_ERRORS } from "../actions/types";
 
-const initialSate = {***REMOVED***;
+const initialSate = {};
 
 export default function(state = initialSate, action) {
   switch (action.type) {
     case GET_ERRORS:
       return action.payload;
     case CLEAR_ERRORS:
-      return {***REMOVED***;
+      return {};
     default:
       return state;
-  ***REMOVED***
-***REMOVED***
+  }
+}

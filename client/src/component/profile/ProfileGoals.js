@@ -1,13 +1,13 @@
-import React, { Component ***REMOVED*** from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class ProfileGoals extends Component {
   render() {
-    const { profile ***REMOVED*** = this.props;
+    const { profile } = this.props;
 
     const goals = profile.goals.map((goal, index) => (
-      <div key={index***REMOVED*** className="p-3">
-        <i className="fa fa-check" /> {goal***REMOVED***
+      <div key={index} className="p-3">
+        <i className="fa fa-check" /> {goal}
       </div>
     ));
 
@@ -19,7 +19,7 @@ class ProfileGoals extends Component {
             <h4 className="text-center text-info">Goals</h4>
     
               <div className="d-flex flex-wrap justify-content-center align-items-center">
-                {goals***REMOVED***
+                {goals}
                 </div>
               </div>
             </div>
@@ -27,10 +27,10 @@ class ProfileGoals extends Component {
         </div>
     
     );
-  ***REMOVED***
-***REMOVED***
+  }
+}
 ProfileGoals.PropTypes = {
   profile: PropTypes.object.isRequired
-***REMOVED***;
+};
 
 export default ProfileGoals;

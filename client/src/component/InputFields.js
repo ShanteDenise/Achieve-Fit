@@ -9,27 +9,27 @@ const InputFieldGroup =  ({
     info,
     error,
     onChange
-***REMOVED***) => {
+}) => {
     return (
 
             <div className='form-group'>
                 <textarea
                     className={classnames('form-control form-control-lg', {
                         'is-invalid' : error  
-                    ***REMOVED***)***REMOVED***
-                    placeholder={placeholder***REMOVED***
-                    name={name***REMOVED***
-                    value={value***REMOVED***
-                    onChange={onChange***REMOVED***
+                    })}
+                    placeholder={placeholder}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
                     />
-                     {info && <small className="form-text text-muted"> {info***REMOVED***</small>***REMOVED***
-                     {error && <div className="form-text text-muted"> {error***REMOVED***</div>***REMOVED***
+                     {info && <small className="form-text text-muted"> {info}</small>}
+                     {error && <div className="form-text text-muted"> {error}</div>}
 
             </div>
                 
          
         );
-    ***REMOVED***
+    }
 
 InputFieldGroup.propTypes ={
     name: PropTypes.string.isRequired,
@@ -39,9 +39,9 @@ InputFieldGroup.propTypes ={
     error: PropTypes.string,
     onChange: PropTypes.func.isRequired,
 
-***REMOVED***
+}
 InputFieldGroup.defaultProps = {
     type: 'text'
-***REMOVED***
+}
 
 export default InputFieldGroup;

@@ -1,20 +1,20 @@
-import React, { Component ***REMOVED*** from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CommentItem from './CommentItem';
 
 class CommentFeed extends Component {
   render() {
-    const { comments, postId ***REMOVED*** = this.props;
+    const { comments, postId } = this.props;
 
     return comments.map(comment => (
-      <CommentItem key={comment._id***REMOVED*** comment={comment***REMOVED*** postId={postId***REMOVED*** />
+      <CommentItem key={comment._id} comment={comment} postId={postId} />
     ));
-  ***REMOVED***
-***REMOVED***
+  }
+}
 
 CommentFeed.propTypes = {
   comments: PropTypes.array.isRequired,
   postId: PropTypes.string.isRequired
-***REMOVED***;
+};
 
 export default CommentFeed;

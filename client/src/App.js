@@ -1,10 +1,10 @@
-import React, { Component ***REMOVED*** from 'react';
-import { BrowserRouter as Router, Route, Switch ***REMOVED*** from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from './utils/setAuthToken';
 import setAuthToken from './utils/setAuthToken';
-import { setCurrentUser ***REMOVED*** from './actions/authActions'
-import { clearCurrentProfile ***REMOVED*** from './actions/profileActions'
-import { Provider ***REMOVED*** from 'react-redux';
+import { setCurrentUser } from './actions/authActions'
+import { clearCurrentProfile } from './actions/profileActions'
+import { Provider } from 'react-redux';
 import store from './store';
 import PrivateRoute from './component/PrivateRoute';
 
@@ -22,7 +22,7 @@ import Profiles from './component/profiles/Profiles';
 import Posts from './component/posts/Posts';
 import Post from './component/post/Post';
 
-import { logoutUser ***REMOVED*** from './actions/authActions';
+import { logoutUser } from './actions/authActions';
 import './App.css';
 
 //Check for token
@@ -41,44 +41,44 @@ if(localStorage.jwtToken){
     //Redirect to login
     window.location.href = '/login';
 
-  ***REMOVED***
+  }
 
 
 class App extends Component {
   render() {
     return (
-      <Provider store ={ store ***REMOVED*** >
+      <Provider store ={ store } >
       <Router>
       <Switch>
       <div className="App">
          <Navbar />
-            <Route exact path="/" component={ Landing ***REMOVED***/>
+            <Route exact path="/" component={ Landing }/>
              <div className="container">
-              <Route exact path="/register" component={ Register ***REMOVED*** />
-              <Route exact path="/login" component={ Login ***REMOVED*** />
+              <Route exact path="/register" component={ Register } />
+              <Route exact path="/login" component={ Login } />
             <Switch>
-              <PrivateRoute exact path="/dashboard" component={ Dashboard ***REMOVED*** />
+              <PrivateRoute exact path="/dashboard" component={ Dashboard } />
              </Switch>
             <Switch>
-              <PrivateRoute exact path="/create-profile" component={ CreateProfile***REMOVED*** />
+              <PrivateRoute exact path="/create-profile" component={ CreateProfile} />
             </Switch>
             <Switch>
-              <PrivateRoute exact path="/edit-profile" component={ EditProfile***REMOVED*** />
+              <PrivateRoute exact path="/edit-profile" component={ EditProfile} />
             </Switch>
             <Switch>
-              <Route exact path="/profile/:handle" component={Profile***REMOVED***/>
+              <Route exact path="/profile/:handle" component={Profile}/>
               </Switch>
               <Switch>
-              <Route exact path="/profiles" component={Profiles***REMOVED*** />
+              <Route exact path="/profiles" component={Profiles} />
               </Switch>
               <Switch>
-              <Route exact path="/profiles/user/:user_id" component={Profile***REMOVED*** />
+              <Route exact path="/profiles/user/:user_id" component={Profile} />
               </Switch>
               <Switch>
-              <PrivateRoute exact path="/feed" component={ Posts ***REMOVED*** />
+              <PrivateRoute exact path="/feed" component={ Posts } />
             </Switch>
             <Switch>
-              <PrivateRoute exact path="/post/:id" component={ Post ***REMOVED*** />
+              <PrivateRoute exact path="/post/:id" component={ Post } />
             </Switch>
 
 
@@ -91,7 +91,7 @@ class App extends Component {
       </Provider>
      
     );
-  ***REMOVED***
-***REMOVED***
+  }
+}
 
 export default App;

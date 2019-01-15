@@ -1,9 +1,9 @@
-import React, { Component ***REMOVED*** from 'react';
+import React, { Component } from 'react';
 
 class ProfileHeader extends Component {
   render() {
 
-    const { profile ***REMOVED*** = this.props;
+    const { profile } = this.props;
     
     return (
       <div className="row">
@@ -13,7 +13,7 @@ class ProfileHeader extends Component {
               <div className="col-4 col-md-3 m-auto">
                 <img
                   className="rounded-circle"
-                  src={profile.user.avatar***REMOVED***
+                  src={profile.user.avatar}
                   alt="user avatar"
                 />
               </div>
@@ -21,10 +21,10 @@ class ProfileHeader extends Component {
             <div className="text-center">
               <h1 className="display-4 text-center"></h1>
               <h2 className="text-center">
-                {profile.handle***REMOVED***{' '***REMOVED***   
+                {profile.handle}{' '}   
               </h2>
 
-              <p>Located in: {profile.location***REMOVED***</p>
+              <p>Located in: {profile.location}</p>
               <p>
     
                   <a
@@ -77,8 +77,8 @@ class ProfileHeader extends Component {
         </div>
       </div>
     );
-  ***REMOVED***
-***REMOVED***
+  }
+}
 
 export default ProfileHeader;
 

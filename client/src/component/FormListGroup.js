@@ -9,10 +9,10 @@ const FormListGroup =  ({
     error,
     onChange,
     options
-***REMOVED***) => {
+}) => {
     const selectOptions = options.map(option => (
-        <option key={option.label***REMOVED*** value={option.value***REMOVED***>
-        {option.label***REMOVED***
+        <option key={option.label} value={option.value}>
+        {option.label}
         </option>
     ))
     return (
@@ -21,21 +21,21 @@ const FormListGroup =  ({
                 <select
                     className={classnames('form-control form-control-lg', {
                         'is-invalid' : error  
-                    ***REMOVED***)***REMOVED***
-                    name={name***REMOVED***
-                    value={value***REMOVED***
-                    onChange={onChange***REMOVED***>
-                    {selectOptions***REMOVED***
+                    })}
+                    name={name}
+                    value={value}
+                    onChange={onChange}>
+                    {selectOptions}
                     </select>
                 
-                     {info && <small className="form-text text-muted"> {info***REMOVED***</small>***REMOVED***
-                     {error && <div className="form-text text-muted"> {error***REMOVED***</div>***REMOVED***
+                     {info && <small className="form-text text-muted"> {info}</small>}
+                     {error && <div className="form-text text-muted"> {error}</div>}
 
             </div>
                 
          
         );
-    ***REMOVED***
+    }
 
 FormListGroup.propTypes = {
     name: PropTypes.string.isRequired,
@@ -45,7 +45,7 @@ FormListGroup.propTypes = {
     onChange: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired
 
-***REMOVED***
+}
 
 
 export default FormListGroup;
