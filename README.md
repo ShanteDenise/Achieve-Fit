@@ -11,8 +11,8 @@ For Project 3 I created a full stack application using # (M)Mongoose,# (E)Expres
 
 Inspiration:
 ----
-I feel that is important to set goals for your physical health. I created this app wanting other fitness lover to be able interact and share their fitness goals. I wanted them to be able to keep track of their daily
-fitness numbers using the FitBit API
+It is important to set goals for your physical health, so I created this app wanting other fitness lover to be able interact and share their fitness goals. I want them to be able to keep track of their daily
+fitness numbers using the FitBit API, visible by only the user. 
 
 Trello Board
 ----
@@ -83,9 +83,6 @@ Users will be able to logout effectively and be rerouted back to home page
 NewsFeed will be added
 
 User will be able to like posts and comments from other users
-
-Users will be able to see their profile after it has been edited
-
 
 Fully Functional Models 
 
