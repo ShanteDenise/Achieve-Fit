@@ -23,6 +23,7 @@ class Navbar extends Component {
         <ul className="navbar-nav ml-auto">
         <li> 
                 <Link className="nav-item mr-4" to="/dashboard">Dashboard</Link></li>
+                <Link className="nav-item mr-8" to="/feed">NewsFeed</Link>
                 <li className="nav-item">
                  <a href = "" 
                  onClick={this.onLogout.bind(this)***REMOVED***className="nav-link">

@@ -16,7 +16,7 @@ class ProfileItems extends Component {
           <div className="media-body">
           <h5 className="mb-2"><Link to={`/profile/${profile.handle***REMOVED***`***REMOVED***>{profile.handle***REMOVED***</Link></h5> 
           {' '***REMOVED***
-          <p className="mb-2">Location: {profile.location***REMOVED***</p>
+          <p className="mb-2">{profile.status***REMOVED***</p>
           <ul className="list-group">
                 {profile.goals.slice(0, 2).map((goals, index) => (
                   <li key={index***REMOVED*** className="list-group-item">

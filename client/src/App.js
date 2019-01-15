@@ -8,6 +8,7 @@ import { Provider ***REMOVED*** from 'react-redux';
 import store from './store';
 import PrivateRoute from './component/PrivateRoute';
 
+
 import Navbar from './component/layout/Navbar';
 import Landing from './component/layout/Landing';
 import Register from './component/auth/Register';
@@ -18,6 +19,8 @@ import CreateProfile from './component/createProfile/CreateProfile';
 import EditProfile from './component/edit-profile/EditProfile';
 import Profile from './component/profile/Profile';
 import Profiles from './component/profiles/Profiles';
+import Posts from './component/posts/Posts';
+import Post from './component/post/Post';
 
 import { logoutUser ***REMOVED*** from './actions/authActions';
 import './App.css';
@@ -71,6 +74,12 @@ class App extends Component {
               <Switch>
               <Route exact path="/profiles/user/:user_id" component={Profile***REMOVED*** />
               </Switch>
+              <Switch>
+              <PrivateRoute exact path="/feed" component={ Posts ***REMOVED*** />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/post/:id" component={ Post ***REMOVED*** />
+            </Switch>
 
 
 
