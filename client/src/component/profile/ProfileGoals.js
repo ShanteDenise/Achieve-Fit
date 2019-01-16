@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 class ProfileGoals extends Component {
   render() {
@@ -30,7 +30,7 @@ class ProfileGoals extends Component {
   }
 }
 ProfileGoals.PropTypes = {
-  profile: PropTypes.object.isRequired
+  profile: propTypes.object.isRequired
 };
 
 export default ProfileGoals;
