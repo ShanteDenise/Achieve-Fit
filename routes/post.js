@@ -51,7 +51,6 @@ router.post(
       text: req.body.text,
       name: req.body.name,
       avatar: req.body.avatar,
-      img:req.body.img,
       user: req.user.id
     });
 
@@ -169,7 +168,6 @@ router.post(
           text: req.body.text,
           name: req.body.name,
           avatar: req.body.avatar,
-          img: req.body.img,
           user: req.user.id
         };
 

@@ -8,7 +8,11 @@ import {
   CLEAR_CURRENT_PROFILE,
   GET_PROFILES
 } from "./types";
+<<<<<<< HEAD
 
+=======
+import { setCurrentUser } from "./authActions";
+>>>>>>> 558c7b85626b1c8bcffaeb69c0ce64aeb958b483
 
 //Get current profile
 export const getCurrentProfile = () => dispatch => {

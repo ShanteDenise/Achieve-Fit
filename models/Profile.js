@@ -26,7 +26,34 @@ const ProfileSchema = new Schema({
     fitbitusername: {
         type:String
     },
-
+    education: [
+        {
+        school: {
+                type:String,
+                required:true
+        },
+        degree: {
+            type:String
+        },
+        fieldofstudy:{
+            type:String
+        },
+        from:{
+            type: Date,
+            required: true
+        },
+        to:{
+            type: Date
+        },
+        current:{
+            type: Boolean,
+            default:false
+        },
+        description: {
+            type:String
+        }  
+    }
+    ],
      
     date:{
         type: Date,
