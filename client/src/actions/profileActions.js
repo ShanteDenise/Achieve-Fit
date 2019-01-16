@@ -8,7 +8,7 @@ import {
   CLEAR_CURRENT_PROFILE,
   GET_PROFILES
 } from "./types";
-import { setCurrentUser } from "./authActions";
+
 
 //Get current profile
 export const getCurrentProfile = () => dispatch => {
