@@ -31,7 +31,7 @@ class Dashboard extends Component {
     //   );
     // } else {
       // Check if logged in user has profile data
-      if (Object.keys(profile).length > 0) {
+      if (profile !== null) {
         dashboardContent = (
           <div>
             <div className="media">
