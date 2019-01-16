@@ -21,15 +21,15 @@ class Dashboard extends Component {
 
     let dashboardContent;
     //When the dashboard is loading the dashboard content will be set to loading gif
-    if (profile === null || loading) {
-      dashboardContent = (
-        <img
-          src={loader}
-          style={{ width: "200px", margin: "auto", display: "block" }}
-          alt="loading"
-        />
-      );
-    } else {
+    // if (profile === null || loading) {
+    //   dashboardContent = (
+    //     <img
+    //       src={loader}
+    //       style={{ width: "200px", margin: "auto", display: "block" }}
+    //       alt="loading"
+    //     />
+    //   );
+    // } else {
       // Check if logged in user has profile data
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
@@ -87,7 +87,7 @@ class Dashboard extends Component {
           </div>
         );
       }
-    }
+    // }
 
     //render the dashboard content below
     return (
