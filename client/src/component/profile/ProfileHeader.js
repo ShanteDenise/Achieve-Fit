@@ -29,7 +29,7 @@ class ProfileHeader extends Component {
     
                   <a
                     className="text-white p-2"
-                    href='https://www.linkedin.com/feed/'
+                    href='https://twitter.com/'
                     target="_blank"
                   >
                     <i className="fab fa-twitter fa-2x" />
@@ -38,7 +38,7 @@ class ProfileHeader extends Component {
 
                   <a
                     className="text-white p-2"
-                    href='https://www.linkedin.com/feed/'
+                    href='https://www.facebook.com/'
                     target="_blank"
                   >
                     <i className="fab fa-facebook fa-2x" />
@@ -56,7 +56,7 @@ class ProfileHeader extends Component {
 
                   <a
                     className="text-white p-2"
-                    href='https://www.linkedin.com/feed/'
+                    href='https://www.youtube.com/watch?v=vFUJrg5GAvs'
                     target="_blank"
                   >
                     <i className="fab fa-youtube fa-2x" />
@@ -65,7 +65,7 @@ class ProfileHeader extends Component {
 
                   <a
                     className="text-white p-2"
-                    href='https://www.linkedin.com/feed/'
+                    href='https://www.instagram.com/'
                     target="_blank"
                   >
                     <i className="fab fa-instagram fa-2x" />
